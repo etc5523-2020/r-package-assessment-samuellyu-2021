@@ -115,7 +115,13 @@
     <p>This function will allow the user to repeatedly add date slider inputs by adding the appropriate params</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dateInput_range</span><span class='op'>(</span><span class='va'>inputId</span>, label <span class='op'>=</span> <span class='st'>"Chosen date range"</span>, <span class='va'>x</span>, start <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>dateInput_range</span><span class='op'>(</span>
+  <span class='va'>inputId</span>,
+  label <span class='op'>=</span> <span class='st'>"Chosen date range"</span>,
+  <span class='va'>date</span>,
+  start <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>date</span><span class='op'>)</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,7 +135,7 @@
       <td><p>is the label</p></td>
     </tr>
     <tr>
-      <th>x</th>
+      <th>date</th>
       <td><p>is the date data</p></td>
     </tr>
     <tr>
