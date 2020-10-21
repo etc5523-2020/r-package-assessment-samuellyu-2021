@@ -4,14 +4,20 @@
 \alias{dateInput_range}
 \title{Function that sets the date range for the slider}
 \usage{
-dateInput_range(inputId, label = "Chosen date range", x, start = min(x), ...)
+dateInput_range(
+  inputId,
+  label = "Chosen date range",
+  date,
+  start = min(date),
+  ...
+)
 }
 \arguments{
 \item{inputId}{input id}
 
 \item{label}{is the label}
 
-\item{x}{is the date data}
+\item{date}{is the date data}
 
 \item{start}{is the start date for the range}
 

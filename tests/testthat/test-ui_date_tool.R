@@ -1,3 +1,5 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("date_tool", {
+  expect_error(dateInput_range(date = NULL, date = ""))
+  expect_error(dateInput_range(character(0L)))
+  expect_error(dateInput_ramge(date = "word"))
 })
