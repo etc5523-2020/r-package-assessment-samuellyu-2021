@@ -22,7 +22,8 @@ Imports:
     tidyr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 Remotes:
     joachim-gassen/tidycovid19,
     kjhealy/covdata
