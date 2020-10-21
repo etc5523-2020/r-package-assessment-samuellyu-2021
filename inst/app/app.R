@@ -301,7 +301,7 @@ server <- function(input, output, session) {
     
     output$measures_pct1 <- DT::renderDataTable({
         
-        soc_dist_tab <- reactive_table() %>%
+        soc_dist <- reactive_table() %>%
             group_by(month, month_label, iso3, `Social distancing measures`) %>%
             summarise(prop = n()) %>%
             mutate_all(~replace(., is.na(.), -1)) %>%
@@ -313,15 +313,8 @@ server <- function(input, output, session) {
                                  `Social distancing measures` >= 13 & `Social distancing measures`<= 16 ~ "12 to 16 (%)",
                                  `Social distancing measures` >= 17 ~ "17 or more (%)")) %>%
             mutate(proportion = round(((prop/sum(prop))*100), 2)) %>%
-            ungroup() %>%
-            group_by(month, month_label, iso3, measures_group) %>%
-            summarise(proportion = sum(proportion)) %>%
-            pivot_wider(names_from = "measures_group",
-                        values_from = "proportion") %>%
-            mutate_all(~replace(., is.na(.), 0)) %>%
-            rename(Month = month, 
-                   Country = iso3,
-                   `Month Label` = month_label)  
+            ungroup()
+        soc_dist_tab <- data_wrangle(soc_dist)
         
         dt_styler(soc_dist_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
         
@@ -329,7 +322,7 @@ server <- function(input, output, session) {
     
     output$measures_pct2 <- DT::renderDataTable({
         
-        mov_rest_tab <- reactive_table() %>% 
+        mov_rest <- reactive_table() %>% 
             group_by(month, month_label, iso3, `Movement Restrictions`) %>%
             summarise(prop = n()) %>%
             mutate_all(~replace(., is.na(.), -1)) %>%
@@ -340,22 +333,15 @@ server <- function(input, output, session) {
                                  `Movement Restrictions` >= 5 & `Movement Restrictions` <= 6 ~ "7 to 9 (%)",
                                  `Movement Restrictions` >= 7 & `Movement Restrictions` <= 8 ~ "12 to 16 (%)")) %>%
             mutate(proportion = round(((prop/sum(prop))*100), 2)) %>%
-            ungroup() %>%
-            group_by(month, month_label, iso3, measures_group) %>%
-            summarise(proportion = sum(proportion)) %>%
-            pivot_wider(names_from = "measures_group",
-                        values_from = "proportion") %>%
-            mutate_all(~replace(., is.na(.), 0)) %>%
-            rename(Month = month, 
-                   Country = iso3,
-                   `Month Name` = month_label)
+            ungroup() 
+        mov_rest_tab <- data_wrangle(mov_rest)
         
         dt_styler(mov_rest_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
     })
     
     output$measures_pct3 <- DT::renderDataTable({
 
-        pub_health <- reactive_table() %>%
+        pub_h_tab <- reactive_table() %>%
             group_by(month, month_label, iso3, `Public Health Measures`) %>%
             summarise(prop = n()) %>%
             mutate_all(~replace(., is.na(.), -1)) %>%
@@ -367,15 +353,8 @@ server <- function(input, output, session) {
                                  `Public Health Measures` >= 13 & `Public Health Measures` <= 16 ~ "13 to 16 (%)",
                                  `Public Health Measures` >= 17 ~ "17 or more (%)"))%>%
             mutate(proportion = round(((prop/sum(prop))*100), 2)) %>%
-            ungroup() %>%
-            group_by(month, month_label, iso3, measures_group) %>%
-            summarise(proportion = sum(proportion)) %>%
-            pivot_wider(names_from = "measures_group",
-                        values_from = "proportion") %>%
-            mutate_all(~replace(., is.na(.), 0)) %>%
-            rename(Month = month, 
-                   Country = iso3,
-                   `Month Name` = month_label)
+            ungroup() 
+        pub_health <- data_wrangle(pub_h_tab)
         
         dt_styler(pub_health, "IRL", "GBR", "#dcfbdc", "#fedddd")
     })

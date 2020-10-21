@@ -18,7 +18,8 @@ Imports:
     covdata,
     magrittr,
     DT,
-    dplyr
+    dplyr,
+    tidyr
 Suggests: 
     knitr,
     rmarkdown
