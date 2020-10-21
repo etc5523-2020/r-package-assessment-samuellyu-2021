@@ -322,11 +322,8 @@ server <- function(input, output, session) {
             rename(Month = month, 
                    Country = iso3,
                    `Month Label` = month_label)  
-        print(soc_dist_tab)
-        datatable(soc_dist_tab, rownames = FALSE, options = list(lengthMenu = c(7, 10, 15, 20), pageLength = 7)) %>% 
-            formatStyle("Country", 
-                        target = 'row',
-                        backgroundColor = styleEqual(c("IRL","GBR"), c("#dcfbdc", "#fedddd")))
+        
+        dt_styler(soc_dist_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
         
     })
     
@@ -353,11 +350,7 @@ server <- function(input, output, session) {
                    Country = iso3,
                    `Month Name` = month_label)
         
-        datatable(mov_rest_tab, rownames = FALSE, options = list(lengthMenu = c(7, 10, 15, 20), pageLength = 7)) %>% 
-            formatStyle("Country", 
-                        target = 'row',
-                        backgroundColor = styleEqual(c("IRL","GBR"), c("#dcfbdc", "#fedddd")))
-        
+        dt_styler(mov_rest_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
     })
     
     output$measures_pct3 <- DT::renderDataTable({
@@ -384,11 +377,7 @@ server <- function(input, output, session) {
                    Country = iso3,
                    `Month Name` = month_label)
         
-        datatable(pub_health, rownames = FALSE, options = list(lengthMenu = c(7, 10, 15, 20), pageLength = 7)) %>% 
-            formatStyle("Country", 
-                        target = 'row',
-                        backgroundColor = styleEqual(c("IRL","GBR"), c("#dcfbdc", "#fedddd")))
-        
+        dt_styler(pub_health, "IRL", "GBR", "#dcfbdc", "#fedddd")
     })
     
     

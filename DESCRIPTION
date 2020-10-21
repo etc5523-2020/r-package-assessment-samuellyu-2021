@@ -15,7 +15,10 @@ RoxygenNote: 7.1.1
 Imports: 
     shiny,
     tidycovid19,
-    covdata
+    covdata,
+    magrittr,
+    DT,
+    dplyr
 Suggests: 
     knitr,
     rmarkdown
