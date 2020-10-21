@@ -79,29 +79,6 @@ table_setup <- cases_uk_irl %>%
     mutate(month = month(date),
            month_label = month(date, label = TRUE, abbr = TRUE)) 
 
-
-soc_dist_tab <- table_setup %>%
-    group_by(month, month_label, iso3, `Public Health Measures`) %>%
-    summarise(prop = n()) %>%
-    mutate_all(~replace(., is.na(.), -1)) %>%
-    mutate(measures_group = 
-               case_when(`Public Health Measures` <= 0 ~ "No Measures (%)",
-                         `Public Health Measures` >= 0 & `Public Health Measures` <= 4 ~ "1 to 4 (%)",
-                         `Public Health Measures` >= 5 & `Public Health Measures` <= 8 ~ "5 to 8 (%)",
-                         `Public Health Measures` >= 9 & `Public Health Measures` <= 12 ~ "9 to 12 (%)",
-                         `Public Health Measures` >= 13 & `Public Health Measures` <= 16 ~ "13 to 16 (%)",
-                         `Public Health Measures` >= 17 ~ "17 or more (%)")) %>%
-    mutate(proportion = round(((prop/sum(prop))*100), 2)) %>%
-    ungroup() %>%
-    group_by(month, month_label, iso3, measures_group) %>%
-    summarise(proportion = sum(proportion)) %>%
-    pivot_wider(names_from = "measures_group",
-                values_from = "proportion") %>%
-    mutate_all(~replace(., is.na(.), 0)) %>%
-    rename(Month = month, 
-           Country = iso3,
-           `Month Name` = month_label)
-
 apple_maps_major_cities <- apple_mobility_covdata %>%
     left_join(major_cities, by = "region") %>%
     select(-country.y) %>%
