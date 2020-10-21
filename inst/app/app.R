@@ -316,7 +316,7 @@ server <- function(input, output, session) {
             ungroup()
         soc_dist_tab <- data_wrangle(soc_dist)
         
-        dt_styler(soc_dist_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
+        dt_styler(soc_dist_tab, "Country", "IRL", "GBR", "#dcfbdc", "#fedddd", 7)
         
     })
     
@@ -336,7 +336,7 @@ server <- function(input, output, session) {
             ungroup() 
         mov_rest_tab <- data_wrangle(mov_rest)
         
-        dt_styler(mov_rest_tab, "IRL", "GBR", "#dcfbdc", "#fedddd")
+        dt_styler(mov_rest_tab, "Country","IRL", "GBR", "#dcfbdc", "#fedddd", 7)
     })
     
     output$measures_pct3 <- DT::renderDataTable({
@@ -356,7 +356,7 @@ server <- function(input, output, session) {
             ungroup() 
         pub_health <- data_wrangle(pub_h_tab)
         
-        dt_styler(pub_health, "IRL", "GBR", "#dcfbdc", "#fedddd")
+        dt_styler(pub_health, "Country","IRL", "GBR", "#dcfbdc", "#fedddd", 7)
     })
     
     

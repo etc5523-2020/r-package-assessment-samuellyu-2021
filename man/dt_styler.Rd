@@ -4,18 +4,22 @@
 \alias{dt_styler}
 \title{Datatable function}
 \usage{
-dt_styler(data, cnt1, cnt2, clr1, clr2)
+dt_styler(data, id, key1, key2, clr1, clr2, plength)
 }
 \arguments{
 \item{data}{this is the dataset where the information lies}
 
-\item{cnt1}{this is country one}
+\item{id}{is the variable column id where the variables are being targetted}
 
-\item{cnt2}{this is country two}
+\item{key1}{this is country one}
+
+\item{key2}{this is country two}
 
 \item{clr1}{this is color one}
 
 \item{clr2}{this is color two}
+
+\item{plength}{this is the length of the table}
 }
 \value{
 will return a datatable with colored rows according to the inputed country index
