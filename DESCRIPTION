@@ -1,5 +1,5 @@
 Package: covid19BFI
-Title: Contains a comparitive analysis of the impact and response to covid19 between Irealnd and UK 
+Title: Covid19: The Battle For Independence Package
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Samuel",
@@ -13,4 +13,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    shiny
+    shiny,
+    tidycovid19,
+    covdata
+Suggests: 
+    knitr,
+    rmarkdown
+Remotes:
+    joachim-gassen/tidycovid19,
+    kjhealy/covdata
+VignetteBuilder: knitr
