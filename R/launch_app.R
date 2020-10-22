@@ -1,6 +1,7 @@
-#' This is a launch function
+#' Generate the shiny application : **Covid19: The Battle of Independence**
 #' 
-#' @description This function allows the user to access the covid19BFI application.
+#' @description launch_app( ) builds and produces the shiny application _Covid19: The Battle of Independence._ The application
+#' displays a comparative and interactive analysis between the impact and response to covid19 between Ireland and the United Kingdom.  
 #' 
 #' @export
 launch_app <- function() {
@@ -11,3 +12,6 @@ launch_app <- function() {
   
   shiny::runApp(appDir, display.mode = "normal")
 } 
+
+#'@usage
+

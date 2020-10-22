@@ -171,7 +171,7 @@ ui <- fluidPage(theme = shinytheme("yeti"),
                             ),
                             mainPanel(
                                 br(),
-                                h2("Daily Count and Deaths Analysis"),
+                                h2("Covid Count and Deaths Analysis"),
                                 plotlyOutput("cases_uk_irl"),
                                 tags$br("The above figure visualises the chosen variables with the date range on the x axis and the figures relating to the variable selected on the y axis. 
                                         This figure is interactive, by hovering over the points of the plot you will see the specific information regarding: 

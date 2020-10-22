@@ -2,10 +2,11 @@
 % Please edit documentation in R/launch_app.R
 \name{launch_app}
 \alias{launch_app}
-\title{This is a launch function}
+\title{Generate the shiny application : \strong{Covid19: The Battle of Independence}}
 \usage{
 launch_app()
 }
 \description{
-This function allows the user to access the covid19BFI application.
+launch_app( ) builds and produces the shiny application \emph{Covid19: The Battle of Independence.} The application
+displays a comparative and interactive analysis between the impact and response to covid19 between Ireland and the United Kingdom.
 }
