@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IRL and UK Covid data — covid_data_uk_irl • covid19BFI</title>
+<title>Covid Data for Ireland and the United Kingdom — covid_data_uk_irl • covid19BFI</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="IRL and UK Covid data — covid_data_uk_irl" />
-<meta property="og:description" content="Function that produces the covid data for IRL and UK" />
+<meta property="og:title" content="Covid Data for Ireland and the United Kingdom — covid_data_uk_irl" />
+<meta property="og:description" content="covid_data_uk_irl( ) returns a dataset that contains covid19 related data for Ireland and the United Kingdom" />
 
 
 
@@ -106,22 +106,59 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>IRL and UK Covid data</h1>
+    <h1>Covid Data for Ireland and the United Kingdom</h1>
     
     <div class="hidden name"><code>covid_data_uk_irl.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Function that produces the covid data for IRL and UK</p>
+    <p><code>covid_data_uk_irl( )</code> returns a dataset that contains covid19 related data for Ireland and the United Kingdom</p>
     </div>
 
     <pre class="usage"><span class='fu'>covid_data_uk_irl</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p><code>covid_data_uk_irl( )</code> returns a dataset that contains covid19 related data for Ireland and the United Kingdom. A tibble with 494 rows and 18 columns, that consist of the following variables</p>
+<ul>
+<li><p><code>date</code> date in YYYY-MM-DD format</p></li>
+<li><p><code>iso3</code> ISO3 country code (character)</p></li>
+<li><p><code>Cumulative Confirmed Cases</code>Cumulative N reported COVID-19 cases up to and including this date</p></li>
+<li><p><code>Cumulative Confirmed Cases per capita, 100,000</code> Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000</p></li>
+<li><p><code>Daily Death Total per capita, 100,000</code> N reported COVID-19 deaths on this date, per capita 100,000</p></li>
+<li><p><code>Cumulative Death per capita, 100,000</code> Cumulative N reported COVID-19 deaths up to and including this date</p></li>
+<li><p><code>Daily Confirmed Cases</code> Cumulative N reported COVID-19 cases up to and including this date</p></li>
+<li><p><code>Cumulative Deaths</code>Cumulative N reported COVID-19 deaths up to and including this date</p></li>
+<li><p><code>Daily Confirmed Deaths</code> N reported COVID-19 deaths on this date</p></li>
+<li><p><code>Daily Confirmed Cases per capita, 100,000</code>N reported COVID-19 cases on this date, per capita 100,000</p></li>
+<li><p><code>Log of Cumulative Confirmed Cases</code> Log base 10 of cumulative N reported COVID-19 cases up to and including this date</p></li>
+<li><p><code>Log of Daily Confirmed Cases</code> Log base 10 of N reported COVID-19 cases on this date</p></li>
+<li><p><code>Log of Cumulative Deaths</code> Log base 10 of cumulative N reported COVID-19 deaths up to and including this date</p></li>
+<li><p><code>Social Distancing measures</code> Number of social distancing measures reported up to date by ACAPS, net of lifted restrictions</p></li>
+<li><p><code>Movement Restrictions</code> Number of movement restrictions reported up to date by ACAPS, net of lifted restrictions</p></li>
+<li><p><code>Public Health Measures</code> Number of public health measures reported up to date by ACAPS, net of lifted restrictions</p></li>
+<li><p><code>details</code> A list of information nested in the cell that contains the date and number of Social Distancing Meansures, Movement Restrictions and Public Health Measures for that day</p></li>
+</ul>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://github.com/joachim-gassen/tidycovid19'>tidycovid19</a> and <a href='https://github.com/kjhealy/covdata'>covdata</a></p>
+    <p>The data has been collected from <a href='https://github.com/joachim-gassen/tidycovid19'>tidycovid19</a> package and the <a href='https://github.com/kjhealy/covdata'>covdata</a> package</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
+    <p>Samuel Lyubic</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'># To access the dataset as a whole </span>
+<span class='fu'>covid_data_uk_irl</span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'># Create an object with the package and then call and work with any variable in the dataset</span>
+<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>covid_data_uk_irl</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>data</span> <span class='op'>%&gt;%</span> <span class='fu'>select</span><span class='op'>(</span><span class='va'>`Log of Daily Confirmed Cases`</span>, <span class='va'>`Movement Restrictions`</span>, <span class='va'>`Public Health Measures`</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
