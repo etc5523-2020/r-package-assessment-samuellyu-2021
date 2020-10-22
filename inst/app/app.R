@@ -91,10 +91,8 @@ apple_maps_major_cities <- apple_mobility_covdata %>%
                           <b>Country: {sub_region}, {country}"),
                country == "Ireland" ~ glue::glue("<br><b>City: {region}
                           <b>Country:{country}"))) %>%
-    filter(region %in% c("Edinburgh","Cardiff","Belfast","Birmingham","Glasgow","Leeds","Liverpool","Manchester","Dublin","Cork", "Galway","Limerick", "London"))
-
-
-
+    filter(region %in% c("Edinburgh","Cardiff","Belfast","Birmingham","Glasgow","Leeds",
+                         "Liverpool","Manchester","Dublin","Cork", "Galway","Limerick", "London"))
 
 
 #ui ----------------------------------------------------------------------------------------------------

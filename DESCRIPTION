@@ -21,7 +21,8 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    glue
 Remotes:
     joachim-gassen/tidycovid19,
     kjhealy/covdata
