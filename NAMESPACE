@@ -2,6 +2,7 @@
 
 export("%>%")
 export(covid_data_uk_irl)
+export(covid_mobility_irl_uk)
 export(data_wrangle)
 export(dateInput_range)
 export(dt_styler)

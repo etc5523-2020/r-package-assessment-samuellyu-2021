@@ -37,15 +37,16 @@ cases_deaths_per_100k <- covdata %>%
            cu_deaths_per_100k = (cu_deaths/pop)*100000,
            log_cu_cases = log10(cu_cases),
            log_cases = log10(cases),
-           log_cu_deaths = log10(cu_deaths),
-           log_deaths = log10(deaths)) 
+           log_cu_deaths = log10(cu_deaths))
 
 cases_uk_long <- cases_deaths_per_100k %>%
     filter(iso3 == "GBR",
            date >= "2020-01-31") %>% #updated the date to be day before first case
     mutate(days_from_1st_case = row_number(),
            days_from_1st_case = as.numeric(as.character(days_from_1st_case))) %>%
-    select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, cases, cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, log_cu_deaths, log_deaths, days_from_1st_case, soc_dist, mov_rest, pub_health) 
+    select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, cases, 
+           cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, log_cu_deaths, 
+           days_from_1st_case, soc_dist, mov_rest, pub_health) 
 
 
 cases_irl_long <- cases_deaths_per_100k %>%
@@ -53,7 +54,9 @@ cases_irl_long <- cases_deaths_per_100k %>%
            date >= "2020-03-01") %>% 
     mutate(days_from_1st_case = row_number(),
            days_from_1st_case = as.numeric(as.character(days_from_1st_case))) %>%
-    select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, cases, cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, log_cu_deaths, log_deaths, days_from_1st_case, soc_dist, mov_rest, pub_health) 
+    select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, 
+           cases, cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, 
+           log_cu_deaths, days_from_1st_case, soc_dist, mov_rest, pub_health) 
 
 cases_uk_irl <- rbind(cases_uk_long, cases_irl_long) %>%
     mutate(details = glue::glue("<br><b>Date: {date}
@@ -70,7 +73,7 @@ cases_uk_irl <- rbind(cases_uk_long, cases_irl_long) %>%
            `Daily Confirmed Cases per capita, 100,000` =  cases_per_100k,
            `Log of Cumulative Confirmed Cases` = log_cu_cases,
            `Log of Daily Confirmed Cases` = log_cases,
-           `Log of Cumulative Deaths` = log_deaths,
+           `Log of Cumulative Deaths` = log_cu_deaths,
            `Social distancing measures` = soc_dist,
            `Movement Restrictions` = mov_rest,
            `Public Health Measures` = pub_health)

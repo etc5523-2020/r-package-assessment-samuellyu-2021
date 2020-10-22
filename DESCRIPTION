@@ -22,7 +22,8 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    glue
+    glue,
+    tibble
 Remotes:
     joachim-gassen/tidycovid19,
     kjhealy/covdata
