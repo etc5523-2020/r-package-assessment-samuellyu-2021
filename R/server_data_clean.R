@@ -1,9 +1,11 @@
 globalVariables(names = c("month", "month_label", "iso3", "measures_group"), add = TRUE)
-#' A function that wrangles selected variables into proportions and long form
+#' Data wrangling functions specific to covid19BFI package.
 #' 
-#' @description Takes the chosen variable and calculates a proportion and then turns it into long form
+#' @description `data_wrangle( )` a **covid19BFI** package specifc function that has refactored repititive tasks from the **Covid19: The Battle For Independence** application by performing a range of cleaning and wrangling operations on the provided dataset. 
 #' 
-#' @param data the dataset that is being used to generate the proportions and long form 
+#' @details `data_wrangle( )` is a **covid19BFI** package specific function that summarises the proportions in the dataset as grouped by the stated variables and takes the provided dataset and turns dataset into a wider format by using the variables `measures_group` and `porportion` with some further wrangling and cleaning.
+#' 
+#' @param data the dataset that is passed in on which the wrangling and cleaning will be performed. Must contain the following variables: `month, month_label, iso3 and measures_group.`
 #' 
 #' @export
 #' @importFrom utils globalVariables
@@ -20,3 +22,7 @@ data_wrangle <- function(data) {
            Country = iso3,
            `Month Label` = month_label)  
 }
+#'
+#' @usage
+#'
+#' @author Samuel Lyubic
