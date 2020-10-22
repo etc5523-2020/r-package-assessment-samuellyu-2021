@@ -17,7 +17,9 @@ Imports:
     magrittr,
     DT,
     dplyr,
-    tidyr
+    tidyr,
+    tidycovid19,
+    covdata
 Suggests: 
     knitr,
     rmarkdown,

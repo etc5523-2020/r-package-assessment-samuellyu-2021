@@ -46,7 +46,7 @@ cases_uk_long <- cases_deaths_per_100k %>%
            days_from_1st_case = as.numeric(as.character(days_from_1st_case))) %>%
     select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, cases, 
            cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, log_cu_deaths, 
-           days_from_1st_case, soc_dist, mov_rest, pub_health) 
+           soc_dist, mov_rest, pub_health) 
 
 
 cases_irl_long <- cases_deaths_per_100k %>%
@@ -56,7 +56,7 @@ cases_irl_long <- cases_deaths_per_100k %>%
            days_from_1st_case = as.numeric(as.character(days_from_1st_case))) %>%
     select(date, iso3, cu_cases, cu_cases_per_100k, deaths_per_100k, cu_deaths_per_100k, 
            cases, cu_deaths, deaths, cases_per_100k, deaths_per_100k, log_cu_cases, log_cases, 
-           log_cu_deaths, days_from_1st_case, soc_dist, mov_rest, pub_health) 
+           log_cu_deaths, soc_dist, mov_rest, pub_health) 
 
 cases_uk_irl <- rbind(cases_uk_long, cases_irl_long) %>%
     mutate(details = glue::glue("<br><b>Date: {date}
@@ -294,7 +294,7 @@ server <- function(input, output, session) {
             ungroup()
         soc_dist_tab <- data_wrangle(soc_dist)
         
-        dt_styler(soc_dist_tab, "Country", "IRL", "GBR", "#dcfbdc", "#fedddd", 7)
+        dt_styler(soc_dist_tab, rownames = FALSE, "Country", "IRL", "GBR", "#dcfbdc", "#fedddd", plength = 7)
         
     })
     
@@ -314,7 +314,7 @@ server <- function(input, output, session) {
             ungroup() 
         mov_rest_tab <- data_wrangle(mov_rest)
         
-        dt_styler(mov_rest_tab, "Country","IRL", "GBR", "#dcfbdc", "#fedddd", 7)
+        dt_styler(mov_rest_tab, rownames = FALSE, "Country","IRL", "GBR", "#dcfbdc", "#fedddd", plength = 7)
     })
     
     output$measures_pct3 <- DT::renderDataTable({
@@ -334,7 +334,7 @@ server <- function(input, output, session) {
             ungroup() 
         pub_health <- data_wrangle(pub_h_tab)
         
-        dt_styler(pub_health, "Country","IRL", "GBR", "#dcfbdc", "#fedddd", 7)
+        dt_styler(pub_health, rownames = FALSE, "Country", "IRL", "GBR", clr1 = "#dcfbdc", clr2 = "#fedddd", 7)
     })
     
     

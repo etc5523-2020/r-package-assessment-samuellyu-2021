@@ -46,7 +46,7 @@ The date format string specifies how the date will be displayed in the browser. 
 }
 
 The remaining arguments that can be used with \code{dateInput_range( )} function are as follows:
-#\itemize{
+\itemize{
 \item \code{end} The initial end date. Either a Date object, or a string in yyyy-mm-dd format. If \code{end} is NULL, the maximum date from the provided dataset will be chosen.
 \item \code{max} The maximum allowed date. Either a Date object, or a string in yyyy-mm-dd format. If \code{max} is NULL, the maximum date from the provided dataset will be chosen.
 \item \code{startview} The date range shown when the input object is first clicked. Can be "month" (the default), "year", or "decade".

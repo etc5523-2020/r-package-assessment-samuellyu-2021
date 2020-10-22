@@ -26,7 +26,7 @@
 #'   \item `DD` Full weekday name
 #' }
 #' @details The remaining arguments that can be used with `dateInput_range( )` function are as follows: 
-#' #\itemize{
+#' \itemize{
 #'   \item `end` The initial end date. Either a Date object, or a string in yyyy-mm-dd format. If `end` is NULL, the maximum date from the provided dataset will be chosen.
 #'   \item `max` The maximum allowed date. Either a Date object, or a string in yyyy-mm-dd format. If `max` is NULL, the maximum date from the provided dataset will be chosen.
 #'   \item `startview` The date range shown when the input object is first clicked. Can be "month" (the default), "year", or "decade".
