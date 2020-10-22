@@ -53,3 +53,5 @@ dt_styler <- function (data, rownames = FALSE, id, key1, key2, clr1, clr2, pleng
 #'@usage
 #'
 #'@author Samuel Lyubic as part of the **covid19BFI** package.
+#'
+#'@source The datatable, formatStyle and styleEqual function used in the `dt_styler` function has been originally developed for the [DT](https://cran.r-project.org/web/packages/DT/DT.pdf) package.

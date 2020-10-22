@@ -2,7 +2,7 @@
 % Please edit documentation in R/ui_date_tool.R
 \name{dateInput_range}
 \alias{dateInput_range}
-\title{Function that sets the date range for the slider}
+\title{Generate a date range input}
 \usage{
 dateInput_range(
   inputId,
@@ -13,19 +13,48 @@ dateInput_range(
 )
 }
 \arguments{
-\item{inputId}{input id}
+\item{inputId}{The input slot that will be used to access the value.}
 
-\item{label}{is the label}
+\item{label}{Display label for the control, or NULL for no label.}
 
-\item{date}{is the date data}
+\item{date}{The date input that contains the date information for the dataset. Either a Date object, or  string in \code{yyyy-mm-dd} formart. Must be a \emph{date} vector of at least length 2. A column from a dataset can be directly called using "$".}
 
-\item{start}{is the start date for the range}
+\item{start}{The initial start date. Either a Date object, or a string in yyyy-mm-dd format. If \code{start} is NULL, it will be reated as \code{min(date)} which is the default and the minimum date from the \code{date} variable provided will be selected.}
 
-\item{...}{is the rest of the inputs which are as follows}
-}
-\value{
-will return a date range  with chosen date values as specified by the user
+\item{...}{The rest of the arguments that can be used have been sourced from the \code{?dateRangeInput} and detailed below in "details":}
 }
 \description{
-This function will allow the user to repeatedly add date slider inputs by adding the appropriate params
+\code{dateInput_range( )} will create a pair of text inputs from the the specified date variable which, when clicked on, bring up calanders that the
+user can click on to select the specific dates they wish to choose.
+}
+\details{
+\code{dateInput_range( )} will return a date range  with chosen date values as specified by the user. The `date`` input can directly call a date variable from a dataset with the start, end and mximum dates being automatically generated from the provided date dataset if their fields are left NULL.
+
+The date format string specifies how the date will be displayed in the browser. It allows the following values:
+
+\itemize{
+\item \code{yy} Year without century (12)
+\item \code{yyyy} Year with century (2012)
+\item \code{mm} Month number, with leading zero (01-12)
+\item \code{m} Month number, without leading zero (1-12)
+\item \code{M} Abbreviated month name
+\item \code{MM} Full month name
+\item \code{dd} Day of month with leading zero
+\item \code{d} Day of month without leading zero
+\item \code{D} Abbreviated weekday name
+\item \code{DD} Full weekday name
+}
+
+The remaining arguments that can be used with \code{dateInput_range( )} function are as follows:
+#\itemize{
+\item \code{end} The initial end date. Either a Date object, or a string in yyyy-mm-dd format. If \code{end} is NULL, the maximum date from the provided dataset will be chosen.
+\item \code{max} The maximum allowed date. Either a Date object, or a string in yyyy-mm-dd format. If \code{max} is NULL, the maximum date from the provided dataset will be chosen.
+\item \code{startview} The date range shown when the input object is first clicked. Can be "month" (the default), "year", or "decade".
+\item \code{weekstart} 	Which day is the start of the week. Should be an integer from 0 (Sunday) to 6 (Saturday).
+\item \code{language }The language used for month and day names. Default is "en". Other valid values include "ar", "az", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en-AU", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr-CH", "fr", "gl", "he", "hr", "hu", "hy", "id", "is", "it-CH", "it", "ja", "ka", "kh", "kk", "ko", "kr", "lt", "lv", "me", "mk", "mn", "ms", "nb", "nl-BE", "nl", "no", "pl", "pt-BR", "pt", "ro", "rs-latin", "rs", "ru", "sk", "sl", "sq", "sr-latin", "sr", "sv", "sw", "th", "tr", "uk", "vi", "zh-CN", and "zh-TW".
+\item \code{serperator} String to display between the start and end input boxes.
+\item \code{width }The width of the input, e.g. '400px', or '100\%.
+\item \code{autoclose} Whether or not to close the datepicker immediately when a date is selected. Takes arguments TRUE or FALSE.
+\item \code{format} is the date format presented to the user, the options are detailed below. The default is \code{yy-mm-dd}.
+}
 }

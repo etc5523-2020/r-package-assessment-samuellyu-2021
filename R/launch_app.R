@@ -14,4 +14,7 @@ launch_app <- function() {
 } 
 
 #'@usage
-
+#'
+#'@return Will generate the **Covid19: The Battle of Independence** application.
+#'
+#'@author Samuel Lyubic
