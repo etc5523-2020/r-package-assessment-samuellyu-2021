@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function that sets the date range for the slider — dateInput_range • covid19BFI</title>
+<title>Generate a date range input — dateInput_range • covid19BFI</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Function that sets the date range for the slider — dateInput_range" />
-<meta property="og:description" content="This function will allow the user to repeatedly add date slider inputs by adding the appropriate params" />
+<meta property="og:title" content="Generate a date range input — dateInput_range" />
+<meta property="og:description" content="dateInput_range( ) will create a pair of text inputs from the the specified date variable which, when clicked on, bring up calanders that the
+user can click on to select the specific dates they wish to choose." />
 
 
 
@@ -106,13 +107,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Function that sets the date range for the slider</h1>
+    <h1>Generate a date range input</h1>
     
     <div class="hidden name"><code>dateInput_range.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function will allow the user to repeatedly add date slider inputs by adding the appropriate params</p>
+    <p><code>dateInput_range( )</code> will create a pair of text inputs from the the specified date variable which, when clicked on, bring up calanders that the
+user can click on to select the specific dates they wish to choose.</p>
     </div>
 
     <pre class="usage"><span class='fu'>dateInput_range</span><span class='op'>(</span>
@@ -128,29 +130,56 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>inputId</th>
-      <td><p>input id</p></td>
+      <td><p>The input slot that will be used to access the value.</p></td>
     </tr>
     <tr>
       <th>label</th>
-      <td><p>is the label</p></td>
+      <td><p>Display label for the control, or NULL for no label.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>is the date data</p></td>
+      <td><p>The date input that contains the date information for the dataset. Either a Date object, or  string in <code>yyyy-mm-dd</code> formart. Must be a <em>date</em> vector of at least length 2. A column from a dataset can be directly called using "$".</p></td>
     </tr>
     <tr>
       <th>start</th>
-      <td><p>is the start date for the range</p></td>
+      <td><p>The initial start date. Either a Date object, or a string in yyyy-mm-dd format. If <code>start</code> is NULL, it will be reated as <code><a href='https://rdrr.io/r/base/Extremes.html'>min(date)</a></code> which is the default and the minimum date from the <code>date</code> variable provided will be selected.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>is the rest of the inputs which are as follows</p></td>
+      <td><p>The rest of the arguments that can be used have been sourced from the <code>?dateRangeInput</code> and detailed below in "details":</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>will return a date range  with chosen date values as specified by the user</p>
+    <p><code>dateInput_range( )</code> will return a date range  with chosen date values as specified by the user. The `date`` input can directly call a date variable from a dataset with the start, end and mximum dates being automatically generated from the provided date dataset if their fields are left NULL.</p>
+<p>The date format string specifies how the date will be displayed in the browser. It allows the following values:</p>
+<ul>
+<li><p><code>yy</code> Year without century (12)</p></li>
+<li><p><code>yyyy</code> Year with century (2012)</p></li>
+<li><p><code>mm</code> Month number, with leading zero (01-12)</p></li>
+<li><p><code>m</code> Month number, without leading zero (1-12)</p></li>
+<li><p><code>M</code> Abbreviated month name</p></li>
+<li><p><code>MM</code> Full month name</p></li>
+<li><p><code>dd</code> Day of month with leading zero</p></li>
+<li><p><code>d</code> Day of month without leading zero</p></li>
+<li><p><code>D</code> Abbreviated weekday name</p></li>
+<li><p><code>DD</code> Full weekday name</p></li>
+</ul>
+
+<p>The remaining arguments that can be used with <code>dateInput_range( )</code> function are as follows:
+#</p><ul>
+<li><p><code>end</code> The initial end date. Either a Date object, or a string in yyyy-mm-dd format. If <code>end</code> is NULL, the maximum date from the provided dataset will be chosen.</p></li>
+<li><p><code>max</code> The maximum allowed date. Either a Date object, or a string in yyyy-mm-dd format. If <code>max</code> is NULL, the maximum date from the provided dataset will be chosen.</p></li>
+<li><p><code>startview</code> The date range shown when the input object is first clicked. Can be "month" (the default), "year", or "decade".</p></li>
+<li><p><code>weekstart</code> 	Which day is the start of the week. Should be an integer from 0 (Sunday) to 6 (Saturday).</p></li>
+<li><p><code>language </code>The language used for month and day names. Default is "en". Other valid values include "ar", "az", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en-AU", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr-CH", "fr", "gl", "he", "hr", "hu", "hy", "id", "is", "it-CH", "it", "ja", "ka", "kh", "kk", "ko", "kr", "lt", "lv", "me", "mk", "mn", "ms", "nb", "nl-BE", "nl", "no", "pl", "pt-BR", "pt", "ro", "rs-latin", "rs", "ru", "sk", "sl", "sq", "sr-latin", "sr", "sv", "sw", "th", "tr", "uk", "vi", "zh-CN", and "zh-TW".</p></li>
+<li><p><code>serperator</code> String to display between the start and end input boxes.</p></li>
+<li><p><code>width </code>The width of the input, e.g. '400px', or '100%.</p></li>
+<li><p><code>autoclose</code> Whether or not to close the datepicker immediately when a date is selected. Takes arguments TRUE or FALSE.</p></li>
+<li><p><code>format</code> is the date format presented to the user, the options are detailed below. The default is <code>yy-mm-dd</code>.</p></li>
+</ul>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
