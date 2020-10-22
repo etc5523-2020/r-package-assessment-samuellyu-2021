@@ -2,28 +2,45 @@
 % Please edit documentation in R/server_dt_tool.R
 \name{dt_styler}
 \alias{dt_styler}
-\title{Datatable function}
+\title{Generate Datatable with Formatted Styling}
 \usage{
-dt_styler(data, id, key1, key2, clr1, clr2, plength)
+dt_styler(data, rownames = FALSE, id, key1, key2, clr1, clr2, plength)
 }
 \arguments{
-\item{data}{this is the dataset where the information lies}
+\item{data}{A data frame that contains the data to be output in the datatable.}
 
-\item{id}{is the variable column id where the variables are being targetted}
+\item{rownames}{Will create the first column as an index with the row numbers for each row when set to \emph{TRUE}, rownames will not be shown when set to \emph{FALSE}.}
 
-\item{key1}{this is country one}
+\item{id}{The column name that contains the \emph{key} variables and will be used as an index for the function to identify.}
 
-\item{key2}{this is country two}
+\item{key1}{A single argument that is the \strong{first key} variable that is chosen to have each of its rows highlighted by being colored in the chosen color.}
 
-\item{clr1}{this is color one}
+\item{key2}{A single argument that is the \strong{second key} variable that is chosen to have each of its rows highlighted by being colored in the other chosen color.}
 
-\item{clr2}{this is color two}
+\item{clr1}{The \strong{first color} that will highlight all the rows that are associated with \emph{key1}.}
 
-\item{plength}{this is the length of the table}
-}
-\value{
-will return a datatable with colored rows according to the inputed country index
+\item{clr2}{The *\emph{second color} that will highlight all the rows that are associated with \emph{key1}.}
+
+\item{plength}{The argument the specifies the \strong{number of rows} to be displayed in the table on the first page. Can take up to any number
+between 1 and the maximum length of the dataset.}
 }
 \description{
-This function will build a datatable and color it for the inputted countries and color choices
+dt_styler( ) generates a datatable with style formatting that will "color" the rows that belong to the
+two key variables by coloring them according to the two colors assigned to the two key variable. dt_styler ( )
+can be used for any two variables from a dataset and with any two colors from a dataset.
+
+Learn more in vignette ("covid19BFI")
+}
+\details{
+a datatable with colored rows according to the two chosen key variables.
+}
+\examples{
+\dontrun{ 
+dt <- iris \%>\% filter(Species \%in\% c("setosa", "versicolor"))
+
+#Builds a datatable of length 10, with the rows for setosa being 
+colored blueand the rows for versicolor colored red.
+dt_styler(dt, rownames = FALSE, "Species", "setosa", "versicolor", "blue", "red", 10) 
+}
+
 }
