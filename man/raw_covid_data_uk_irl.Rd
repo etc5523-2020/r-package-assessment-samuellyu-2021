@@ -5,13 +5,50 @@
 \alias{raw_covid_data_uk_irl}
 \title{Raw form of the covid data used for analysis in the application}
 \format{
-format is x by y
+\code{raw_covid_data_uk_irl} returns a dataset that contains covid19 related data for Ireland and the United Kingdom, updated as of the 21st of October 2020.
+
+\itemize{
+\item \code{date} Date in YYYY-MM-DD format
+\item \code{cname} Country name
+\item \code{iso3} ISO3 country code (character)
+\item \code{cu_cases}Cumulative number of reported COVID-19 cases up to and including this date updated as of the 21st of October 2020.
+\item \code{cu_cases_per_100k} Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000 updated as of the 21st of October 2020.
+\item \code{deaths_per_100k} N reported COVID-19 deaths updated as of the 21st of October 2020., per capita 100,000
+\item \code{cu_deaths_per_100k} Cumulative N reported COVID-19 deaths updated as of the 21st of October 2020.
+\item \code{cases_per_100k} Daily confirmed reported COVID-19 cases on this date, per capita 100,000
+\item \code{log_cu_cases} Log base 10 of cumulative N reported COVID-19 cases up to and including this date
+\item \code{log_cases} Log base 10 of N reported COVID-19 cases on this date
+\item \code{log_cu_deaths} Log base 10 of cumulative N reported COVID-19 deaths up to and including this date
+\item \code{cases} Number of daily reported COVID-19 cases on the chosen date up to the 21st of October 2020.
+\item \code{cu_deaths}Cumulative N reported COVID-19 deaths up to the 21st of October 2020.
+\item \code{deaths} Number reported COVID-19 daily deaths on the chosen date up to the 21st of October 2020.
+\item \code{recovered} Covid-19 recoveries as reported by JHU CSSE (accumulated)
+\item \code{gcmr_retail_recreation} Log base 10 of cumulative N reported COVID-19 cases up to and including this date
+\item \code{gcmr_grocery_pharmacy} Log base 10 of N reported COVID-19 cases on this date
+\item \code{gcmr_transit_stations} Log base 10 of cumulative N reported COVID-19 deaths up to and including this date
+\item \code{gcmr_workplaces} Google Community Mobility Reports data for the frequency that people visit workplaces expressed as a percentage*100 change relative to the baseline period Jan 3 - Feb 6, 2020
+\item \verb{Social Distancing measures} Number of social distancing measures reported up to date by ACAPS, net of lifted restrictions
+\item \verb{Movement Restrictions} Number of movement restrictions reported up to date by ACAPS, net of lifted restrictions
+\item \verb{Public Health Measures} Number of public health measures reported up to date by ACAPS, net of lifted restrictions
+\item \code{pop} population for each country in 2019
+}
+}
+\source{
+The data has been collected from \href{https://github.com/joachim-gassen/tidycovid19}{tidycovid19} package and the \href{https://github.com/kjhealy/covdata}{covdata} package
 }
 \usage{
 raw_covid_data_uk_irl
 }
 \description{
-covid data raw form
+Covid data for Ireland and United Kingdom in the complete and raw form containing all the primary variables from the orginal collection.
+}
+\examples{
+\dontrun{
+# Directly call variables from the `raw_covid_data_uk_irl` dataset
+raw_covid_data_uk_irl \%>\%
+select(deaths, pop, cname)
+}
+
 }
 \author{
 Samuel Lyubic

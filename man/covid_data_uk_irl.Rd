@@ -10,7 +10,7 @@
 \itemize{
 \item \code{date} date in YYYY-MM-DD format
 \item \code{iso3} ISO3 country code (character)
-\item \verb{Cumulative Confirmed Cases}Cumulative N reported COVID-19 cases up to and including this updated as of the 21st of October 2020.
+\item \verb{Cumulative Confirmed Cases}Cumulative number of reported COVID-19 cases up to and including this date updated as of the 21st of October 2020.
 \item \verb{Cumulative Confirmed Cases per capita, 100,000} Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000 updated as of the 21st of October 2020.
 \item \verb{Daily Death Total per capita, 100,000} N reported COVID-19 deaths updated as of the 21st of October 2020., per capita 100,000
 \item \verb{Cumulative Death per capita, 100,000} Cumulative N reported COVID-19 deaths updated as of the 21st of October 2020.

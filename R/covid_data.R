@@ -1,4 +1,3 @@
-globalVariables(c("iso3c", "date", "recovered", "soc_dist", "mov_rest", "pub_health", "gcmr_retail_recreation", "gcmr_grocery_pharmacy", "gcmr_transit_stations", "gcmr_workplaces", "gcmr_residential","cu_cases", "cu_cases_per_100k", "deaths_per_100k", "cu_deaths_per_100k", "cases", "cu_deaths", "deaths", "cases_per_100k", "deaths_per_100k", "log_cu_cases", "log_cases", "log_cu_deaths","days_from_1st_case", "pop", "download_merged_data"), add = TRUE)
 #' Covid Data for Ireland and the United Kingdom
 #' 
 #' @description `covid_data_uk_irl` returns a dataset that contains the wrangled covid19 related data for Ireland and the United Kingdom with the variables listed below.
@@ -10,7 +9,7 @@ globalVariables(c("iso3c", "date", "recovered", "soc_dist", "mov_rest", "pub_hea
 #' \itemize{
 #'    \item `date` date in YYYY-MM-DD format
 #'    \item `iso3` ISO3 country code (character)
-#'    \item `Cumulative Confirmed Cases`Cumulative N reported COVID-19 cases up to and including this updated as of the 21st of October 2020.
+#'    \item `Cumulative Confirmed Cases`Cumulative number of reported COVID-19 cases up to and including this date updated as of the 21st of October 2020.
 #'    \item `Cumulative Confirmed Cases per capita, 100,000` Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000 updated as of the 21st of October 2020.
 #'    \item `Daily Death Total per capita, 100,000` N reported COVID-19 deaths updated as of the 21st of October 2020., per capita 100,000 
 #'    \item `Cumulative Death per capita, 100,000` Cumulative N reported COVID-19 deaths updated as of the 21st of October 2020.
