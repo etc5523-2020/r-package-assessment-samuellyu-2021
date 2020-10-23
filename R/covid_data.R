@@ -41,7 +41,8 @@ globalVariables(c("iso3c", "date", "recovered", "soc_dist", "mov_rest", "pub_hea
 #'
 #'@export
 covid_data_uk_irl <- function() {
-  tidycovid <- download_merged_data(cached = TRUE, silent = TRUE) %>%
+  download_data <-download_merged_data(cached = TRUE, silent = TRUE)
+  tidycovid <- download_data %>%
     filter(iso3c %in% c("IRL", "GBR")) %>%
     select(iso3c, date, recovered, soc_dist, mov_rest, pub_health, 
            gcmr_retail_recreation, gcmr_grocery_pharmacy, gcmr_transit_stations, 

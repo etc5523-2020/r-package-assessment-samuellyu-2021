@@ -23,7 +23,7 @@
 \item \verb{Social Distancing measures} Number of social distancing measures reported up to date by ACAPS, net of lifted restrictions
 \item \verb{Movement Restrictions} Number of movement restrictions reported up to date by ACAPS, net of lifted restrictions
 \item \verb{Public Health Measures} Number of public health measures reported up to date by ACAPS, net of lifted restrictions
-\item \code{details} A list of information nested in the cell that contains the date and number of Social Distancing Meansures, Movement Restrictions and Public Health Measures for that day
+\item \code{details} A list of information nested in the cell that contains the date and number of Social Distancing Measures, Movement Restrictions and Public Health Measures for that day
 }
 }
 \source{

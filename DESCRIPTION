@@ -18,14 +18,13 @@ Imports:
     DT,
     dplyr,
     tidyr,
-    covdata
+    covdata,
+    tidycovid19
 Suggests: 
     knitr,
     rmarkdown,
     testthat,
     glue,
     tibble
-Remotes:
-    joachim-gassen/tidycovid19,
-    kjhealy/covdata
+Remotes: joachim-gassen/tidycovid19
 VignetteBuilder: knitr
