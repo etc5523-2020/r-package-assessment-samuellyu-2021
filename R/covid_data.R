@@ -27,17 +27,18 @@ globalVariables(c("iso3c", "date", "recovered", "soc_dist", "mov_rest", "pub_hea
 #'    \item `details` A list of information nested in the cell that contains the date and number of Social Distancing Measures, Movement Restrictions and Public Health Measures for that day
 #'}
 #'
-#'@examples
-#'\dontrun{
-#'# To access the dataset as a whole 
-#'covid_data_uk_irl()
+#'@author Samuel Lyubic
 #'
+#'@examples 
+#'\dontrun{
 #'# Create an object with the package and then call and work with any variable in the dataset
 #' data <- covid_data_uk_irl()
 #' data %>% select(`Log of Daily Confirmed Cases`, `Movement Restrictions`, `Public Health Measures`)
 #'}
 #'
-#'@author Samuel Lyubic
+#'@docType data
+#'
+#'@usage covid_data_uk_irl()
 #'
 #'@export
 covid_data_uk_irl <- function() {
@@ -97,6 +98,9 @@ covid_data_uk_irl <- function() {
            `Movement Restrictions` = mov_rest,
            `Public Health Measures` = pub_health)
 }
+#'
+#
+#'
 #'
 #'
 #'

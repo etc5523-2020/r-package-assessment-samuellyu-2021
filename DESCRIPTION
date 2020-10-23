@@ -24,8 +24,15 @@ Suggests:
     rmarkdown,
     testthat,
     glue,
-    tibble
+    tibble,
+    lubridate,
+    shinythemes,
+    sf,
+    rnaturalearth,
+    rnaturalearthdata
 Remotes: 
     joachim-gassen/tidycovid19,
     kjhealy/covdata
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
