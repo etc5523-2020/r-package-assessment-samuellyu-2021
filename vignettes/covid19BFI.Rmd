@@ -2,7 +2,7 @@
 title: "covid19BFI Package"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Covid19: The Battle For Independence Package}
+  %\VignetteIndexEntry{covid19BFI Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -40,8 +40,7 @@ a datatable with colored rows according to the two chosen key variables.
 \dontrun{ 
 dt <- iris \%>\% filter(Species \%in\% c("setosa", "versicolor"))
 
-#Builds a datatable of length 10, with the rows for setosa being 
-colored blueand the rows for versicolor colored red.
+#Builds a datatable of length 10, with red and blue rows.
 dt_styler(dt, "Species", "setosa", "versicolor", "blue", "red", 10, rownames = FALSE) 
 }
 
