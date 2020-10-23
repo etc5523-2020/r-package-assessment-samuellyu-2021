@@ -43,7 +43,7 @@ application, providing user access immediately.
 
 *covid19BFI* provides acess to the data used to create the *Covid19: The
 Battle for Independence* application as well as tools to explore this,
-and any, dataset. Calling **covid\_data\_uk\_irl ( )** will provide the
+and any, dataset. Calling **covid\_data\_uk\_irl** will provide the
 covid cases and deaths data that has been compiled for Ireland and the
 United Kingdom. In order to further explore this dataset, simply assign
 it to an object and then conduct the desired analysis. Tools that the
@@ -70,13 +70,12 @@ library(covdata)
 #>     uspop
 library(tibble)
 options(digits = 2)
-data <- covid_data_uk_irl()
-covid_data <- data %>% 
+data <- covid_data_uk_irl %>% 
   arrange(desc(date)) %>%
   head(n=10)
 
 #Can use dt_styler to format the data according to key the specified key variables
-dt_styler(covid_data, rownames = FALSE, "iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", 4)
+dt_styler(data, rownames = FALSE, "iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", 4)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />

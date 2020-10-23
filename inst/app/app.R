@@ -12,33 +12,16 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 options(scipen=999)
 
+
+
 # wrangling --------------------------------------------------------------------------------------------
 
-world_map <- map_data("world") 
-major_cities <- tibble(lat = c("55.953251", "51.481312", "54.597286", "52.486244","55.861147", "53.797419", "53.405472", "53.479147","53.349307", "51.897928", "53.274412", "52.661258", "51.507276"), 
-                       lng = c("-3.188267","-3.180500", "-5.930120", "-1.890401", "-4.249989", "-1.543794", "-2.980539","-2.244745", "-6.261175", "-8.470581", "-9.049063", "-8.630208", "-0.12766"), 
-                       region = c("Edinburgh","Cardiff","Belfast","Birmingham","Glasgow","Leeds","Liverpool","Manchester","Dublin","Cork", "Galway","Limerick", "London"),
-                       country = c("GBR", "GBR", "GBR", "GBR", "GBR", "GBR", "GBR", "GBR", "IRL", "IRL", "IRL", "IRL", "GBR"),
-                       population = c("482005", "335145", "280211", "1086000", "598830", "474632", "552267", "510746", "1388000", "124391", "79934", "194899", "8982000"))
 
 table_setup <- covid_data_uk_irl %>%
     mutate(month = month(date),
            month_label = month(date, label = TRUE, abbr = TRUE)) 
 
-apple_maps_major_cities <- apple_mobility_covdata %>%
-    left_join(major_cities, by = "region") %>%
-    select(-country.y) %>%
-    rename(country = country.x) %>%
-    mutate(lat = as.numeric(lat),
-           population = as.numeric(population),
-           lng = as.numeric(lng),
-           Details = case_when(
-               country == "United Kingdom" ~ glue::glue("<br><b>City: {region}
-                          <b>Country: {sub_region}, {country}"),
-               country == "Ireland" ~ glue::glue("<br><b>City: {region}
-                          <b>Country:{country}"))) %>%
-    filter(region %in% c("Edinburgh","Cardiff","Belfast","Birmingham","Glasgow","Leeds",
-                         "Liverpool","Manchester","Dublin","Cork", "Galway","Limerick", "London"))
+
 
 
 #ui ----------------------------------------------------------------------------------------------------
@@ -286,7 +269,7 @@ server <- function(input, output, session) {
                                              scale = "medium", returnclass = "sf")})
     
     apple_maps_country <- reactive({
-        apple_maps_major_cities %>%
+        mobility_major_cities %>%
             filter(country == input$location)
     })
     
@@ -315,18 +298,18 @@ server <- function(input, output, session) {
     
     observeEvent(input$location, {
         updateSelectInput(session, "city",
-                          choices = filter(apple_maps_major_cities, country == input$location)$region)
+                          choices = filter(mobility_major_cities, country == input$location)$region)
         
     })
     
     observeEvent(event_data("plotly_click"), {
         click_df <- event_data("plotly_click")
-        region_name <- filter(apple_maps_major_cities, lng == click_df$x, lat ==click_df$y) %>%
+        region_name <- filter(mobility_major_cities, lng == click_df$x, lat ==click_df$y) %>%
             pull(region)
         updateSelectInput(session, "city", selected = region_name)
     })
     
-    major_cities_only <- reactive({apple_maps_major_cities %>%
+    major_cities_only <- reactive({mobility_major_cities %>%
             filter(region == input$city)
         })
     

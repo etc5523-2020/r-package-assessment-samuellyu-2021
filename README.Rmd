@@ -37,7 +37,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-samuellyu-2021")
 launch_app( ) will build and generate the interactive shiny application, providing user access immediately.
 
 ## Package data and tools
-_covid19BFI_ provides acess to the data used to create the _Covid19: The Battle for Independence_ application as well as tools to explore this, and any, dataset. Calling **covid_data_uk_irl ( )** will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a **dt_styler( )** which is datatable style formatter that can be used with any two variables from any dataset.
+_covid19BFI_ provides acess to the data used to create the _Covid19: The Battle for Independence_ application as well as tools to explore this, and any, dataset. Calling **covid_data_uk_irl** will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a **dt_styler( )** which is datatable style formatter that can be used with any two variables from any dataset.
 
 ```{r example}
 library(covid19BFI)
@@ -46,13 +46,12 @@ library(dplyr)
 library(covdata)
 library(tibble)
 options(digits = 2)
-data <- covid_data_uk_irl()
-covid_data <- data %>% 
+data <- covid_data_uk_irl %>% 
   arrange(desc(date)) %>%
   head(n=10)
 
 #Can use dt_styler to format the data according to key the specified key variables
-dt_styler(covid_data, rownames = FALSE, "iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", 4)
+dt_styler(data, rownames = FALSE, "iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", 4)
 ```
 
 As shown, **dt_styler( )** colors the rows according to the two key variables in the index column. 
