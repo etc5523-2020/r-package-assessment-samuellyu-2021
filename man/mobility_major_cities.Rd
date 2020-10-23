@@ -5,16 +5,43 @@
 \alias{mobility_major_cities}
 \title{Mobility data for the major cities in Ireland and the United Kingdom}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9765 rows and 12 columns.
+\code{mobility_major_cities} returns a dataset that has 9,755 rows and 12 columns, as follows
+
+\itemize{
+\item \code{geo_type} character Type geographical unit. Values: city or country/region
+\item \code{region} character Name of geographical unit.
+\item \code{transportation_type}character Mode of transport. Values: Driving, Transit, or Walking
+\item \code{alternative_name} character Name of region in local language
+\item \code{sub_region} character country Subregion
+\item \code{country} character Country name (not provided for all countries)
+\item \code{date} date Date in yyyy-mm-dddd format
+\item \code{score}double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.
+\item \code{lat} Latitude
+\item \code{lng} Longitude
+\item \code{population}Population of the region
+\item \code{Details} List of information containing city name and country
+}
 }
 \source{
-The data has been collected from \href{https://github.com/joachim-gassen/tidycovid19}{tidycovid19} package and the \href{https://github.com/kjhealy/covdata}{covdata} package
+The data has been collected from the \href{https://github.com/kjhealy/covdata}{covdata} package
 }
 \usage{
 mobility_major_cities
 }
 \description{
-\code{mobility_major_cities} returns a dataset that contains the monility data for the major cities in Ireland and the United Kingdom with the variables listed below.
+\code{mobility_major_cities} returns a dataset that contains the mobility scores for the major cities in Ireland and the United Kingdom, as well as latitude and longitude location. All the variables are listed below.
+}
+\details{
+Data from Apple Maps on relative changes in mobility in various cities and countries.
+}
+\examples{
+\dontrun{
+# Directly call variables from the `mobility_major_cities` dataset
+mobility_major_cities \%>\%
+ggplot(aes(x = lng, y = lat)) +
+geom_point()
+}
+
 }
 \author{
 Samuel Lyubic

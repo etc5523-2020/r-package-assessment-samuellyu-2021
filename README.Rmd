@@ -13,14 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# covid19BFI
+# covid19BFI package
 
 <!-- badges: start -->
 
 [![R build status](https://github.com/etc5523-2020/r-package-assessment-samuellyu-2021/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-samuellyu-2021/actions)
 <!-- badges: end -->
 
-The R package _covid19BFI_ is a container for the _Covid19: The Battle for Independence_ application that provides access to an interactive and insightful application for compartive analysis between Ireland and the United Kingdom over the impact of coronavirus and the response to deal with pandemic from each government. Coronavirus has further reignited the discussion for Irish independence, given Ireland is split into two states - The republic of Ireland and Northern Ireland, there is now a direct case study with coronavirus response as the proxy for Ireland's ability to stand completely united and independent of the UK, with this package providing access to the application that hands
+The R package _covid19BFI_ is a container for the _Covid19: The Battle for Independence_ application that provides access to an interactive and insightful application for comparative analysis between Ireland and the United Kingdom over the impact of corona virus and the response to deal with pandemic from each government. Corona virus has further reignited the discussion for Irish independence, given Ireland is split into two states - The republic of Ireland and Northern Ireland, there is now a direct case study with corona virus response as the proxy for Ireland's ability to stand completely united and independent of the UK, with this package providing access to the application that hands
 the user the data and the tools to make critically assess the responses between the two countries as well, as access the data and other tools to recreate the analysis.
 
 ## Installation
@@ -38,7 +38,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-samuellyu-2021")
 launch_app( ) will build and generate the interactive shiny application, providing user access immediately.
 
 ## Package data and tools
-_covid19BFI_ provides acess to the data used to create the _Covid19: The Battle for Independence_ application as well as tools to explore this, and any, dataset. Calling **covid_data_uk_irl** will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a **dt_styler( )** which is datatable style formatter that can be used with any two variables from any dataset.
+_covid19BFI_ provides access to the data used to create the _Covid19: The Battle for Independence_ application as well as tools to explore this, and any, dataset. Calling **covid_data_uk_irl** will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a **dt_styler( )** which is datatable style formatter that can be used with any two variables from any dataset.
 
 ```{r example}
 library(covid19BFI)
@@ -59,5 +59,5 @@ As shown, **dt_styler( )** colors the rows according to the two key variables in
 
 ## Learn more about **covid19BFI**
 
-  - The vignette provides further indepth explanation of the what the package provides as well as documentation for all the functions, tools and data.
+  - The vignette provides further in depth explanation of the what the package provides as well as documentation for all the functions, tools and data.
 
