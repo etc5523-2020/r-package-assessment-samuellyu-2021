@@ -18,7 +18,8 @@ Imports:
     DT,
     dplyr,
     tidyr,
-    covdata
+    covdata,
+    tidycovid19
 Suggests: 
     knitr,
     rmarkdown,
