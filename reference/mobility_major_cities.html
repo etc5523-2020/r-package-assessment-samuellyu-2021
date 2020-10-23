@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Mobility data for the major cities in Ireland and the United Kingdom — mobility_major_cities" />
-<meta property="og:description" content="mobility_major_cities returns a dataset that contains the monility data for the major cities in Ireland and the United Kingdom with the variables listed below." />
+<meta property="og:description" content="mobility_major_cities returns a dataset that contains the mobility scores for the major cities in Ireland and the United Kingdom, as well as latitude and longitude location. All the variables are listed below." />
 
 
 
@@ -111,7 +111,7 @@
     </div>
 
     <div class="ref-description">
-    <p><code>mobility_major_cities</code> returns a dataset that contains the monility data for the major cities in Ireland and the United Kingdom with the variables listed below.</p>
+    <p><code>mobility_major_cities</code> returns a dataset that contains the mobility scores for the major cities in Ireland and the United Kingdom, as well as latitude and longitude location. All the variables are listed below.</p>
     </div>
 
     <pre class="usage"><span class='va'>mobility_major_cities</span></pre>
@@ -119,14 +119,41 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 9765 rows and 12 columns.</p>
+    <p><code>mobility_major_cities</code> returns a dataset that has 9,755 rows and 12 columns, as follows</p>
+<ul>
+<li><p><code>geo_type</code> character Type geographical unit. Values: city or country/region</p></li>
+<li><p><code>region</code> character Name of geographical unit.</p></li>
+<li><p><code>transportation_type</code>character Mode of transport. Values: Driving, Transit, or Walking</p></li>
+<li><p><code>alternative_name</code> character Name of region in local language</p></li>
+<li><p><code>sub_region</code> character country Subregion</p></li>
+<li><p><code>country</code> character Country name (not provided for all countries)</p></li>
+<li><p><code>date</code> date Date in yyyy-mm-dddd format</p></li>
+<li><p><code>score</code>double Activity score. Indexed to 100 on the first date of observation for a given mode of transport.</p></li>
+<li><p><code>lat</code> Latitude</p></li>
+<li><p><code>lng</code> Longitude</p></li>
+<li><p><code>population</code>Population of the region</p></li>
+<li><p><code>Details</code> List of information containing city name and country</p></li>
+</ul>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>The data has been collected from <a href='https://github.com/joachim-gassen/tidycovid19'>tidycovid19</a> package and the <a href='https://github.com/kjhealy/covdata'>covdata</a> package</p>
+    <p>The data has been collected from the <a href='https://github.com/kjhealy/covdata'>covdata</a> package</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Data from Apple Maps on relative changes in mobility in various cities and countries.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Samuel Lyubic</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'># Directly call variables from the `mobility_major_cities` dataset</span>
+<span class='va'>mobility_major_cities</span> <span class='op'>%&gt;%</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>lng</span>, y <span class='op'>=</span> <span class='va'>lat</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+<span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
