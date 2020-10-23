@@ -5,18 +5,18 @@
 \alias{covid_data_uk_irl}
 \title{Covid Data for Ireland and the United Kingdom}
 \format{
-\code{covid_data_uk_irl( )} returns a dataset that contains covid19 related data for Ireland and the United Kingdom. A tibble with 494 rows and 18 columns, that consist of the following variables
+\code{covid_data_uk_irl} returns a dataset that contains covid19 related data for Ireland and the United Kingdom, updated as of the 21st of October 2020.
 
 \itemize{
 \item \code{date} date in YYYY-MM-DD format
 \item \code{iso3} ISO3 country code (character)
-\item \verb{Cumulative Confirmed Cases}Cumulative N reported COVID-19 cases up to and including this date
-\item \verb{Cumulative Confirmed Cases per capita, 100,000} Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000
-\item \verb{Daily Death Total per capita, 100,000} N reported COVID-19 deaths on this date, per capita 100,000
-\item \verb{Cumulative Death per capita, 100,000} Cumulative N reported COVID-19 deaths up to and including this date
-\item \verb{Daily Confirmed Cases} Cumulative N reported COVID-19 cases up to and including this date
-\item \verb{Cumulative Deaths}Cumulative N reported COVID-19 deaths up to and including this date
-\item \verb{Daily Confirmed Deaths} N reported COVID-19 deaths on this date
+\item \verb{Cumulative Confirmed Cases}Cumulative N reported COVID-19 cases up to and including this updated as of the 21st of October 2020.
+\item \verb{Cumulative Confirmed Cases per capita, 100,000} Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000 updated as of the 21st of October 2020.
+\item \verb{Daily Death Total per capita, 100,000} N reported COVID-19 deaths updated as of the 21st of October 2020., per capita 100,000
+\item \verb{Cumulative Death per capita, 100,000} Cumulative N reported COVID-19 deaths updated as of the 21st of October 2020.
+\item \verb{Daily Confirmed Cases} Number of daily reported COVID-19 cases on the chosen date up to the 21st of October 2020.
+\item \verb{Cumulative Deaths}Cumulative N reported COVID-19 deaths up to the 21st of October 2020.
+\item \verb{Daily Confirmed Deaths} Number reported COVID-19 daily deaths on the chosen date up to the 21st of October 2020.
 \item \verb{Daily Confirmed Cases per capita, 100,000}N reported COVID-19 cases on this date, per capita 100,000
 \item \verb{Log of Cumulative Confirmed Cases} Log base 10 of cumulative N reported COVID-19 cases up to and including this date
 \item \verb{Log of Daily Confirmed Cases} Log base 10 of N reported COVID-19 cases on this date
@@ -31,19 +31,20 @@
 The data has been collected from \href{https://github.com/joachim-gassen/tidycovid19}{tidycovid19} package and the \href{https://github.com/kjhealy/covdata}{covdata} package
 }
 \usage{
-covid_data_uk_irl()
+covid_data_uk_irl
 }
 \description{
-\code{covid_data_uk_irl( )} returns a dataset that contains covid19 related data for Ireland and the United Kingdom
+\code{covid_data_uk_irl} returns a dataset that contains the wrangled covid19 related data for Ireland and the United Kingdom with the variables listed below.
 }
 \examples{
 \dontrun{
-# Create an object with the package and then call and work with any variable in the dataset
-data <- covid_data_uk_irl()
-data \%>\% select(`Log of Daily Confirmed Cases`, `Movement Restrictions`, `Public Health Measures`)
+# Directly call variables from the `covid_data_uk_irl` dataset
+ covid_data_uk_irl \%>\%
+select(`Log of Daily Confirmed Cases`, `Movement Restrictions`, `Public Health Measures`)
 }
 
 }
 \author{
 Samuel Lyubic
 }
+\keyword{datasets}

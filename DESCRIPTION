@@ -18,8 +18,7 @@ Imports:
     DT,
     dplyr,
     tidyr,
-    covdata,
-    tidycovid19
+    covdata
 Suggests: 
     knitr,
     rmarkdown,
@@ -32,7 +31,6 @@ Suggests:
     rnaturalearth,
     rnaturalearthdata
 Remotes: 
-    joachim-gassen/tidycovid19,
     kjhealy/covdata
 VignetteBuilder: knitr
 Depends: 
