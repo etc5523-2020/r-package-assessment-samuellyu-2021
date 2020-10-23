@@ -6,7 +6,7 @@ Authors@R:
            family = "Lyubic",
            role = c("aut", "cre"),
            email = "slyu0007@student.monash.edu")
-Description: Contains a comparitive analysis of the impact and response to covid19 between Ireland and UK.
+Description: The package is a container for the Covid19: The Battle For Independence application which is a comparative tool to assess the different impact and approach that Ireland and the United Kingdom (GBR) have taken. The application is accessed through the covid19BFI package and consists of four different tabs that contain information about the purpose of the application, comparative analysis across the impact of covid19 and the government intervention from both countries as well as, an analysis of the impact on residents mobility as a result of the government intervention measures, restrictions and policies. Furthermore, this package contains data functions that allow access to the data used to build the package as well as providing datatable formatting functions, data wrangling functions and shiny application UI input date range functions.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
