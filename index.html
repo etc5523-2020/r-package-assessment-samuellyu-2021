@@ -67,24 +67,65 @@
 <a href="#covid19bfi" class="anchor"></a>covid19BFI</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of covid19BFI is to …</p>
+<p>The R package <em>covid19BFI</em> is a container for the <em>Covid19: The Battle for Independence</em> application that provides access to an interactive and insightful application for compartive analysis between Ireland and the United Kingdom over the impact of coronavirus and the response to deal with pandemic from each government. Coronavirus has further reignited the discussion for Irish independence, given Ireland is split into two states - The republic of Ireland and Northern Ireland, there is now a direct case study with coronavirus response as the proxy for Ireland’s ability to stand completely united and independent of the UK, with this package providing access to the application that hands the user the data and the tools to make critically assess the responses between the two countries as well, as access the data and other tools to recreate the analysis.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the <strong>development</strong> version from <a href="https://github.com/etc5523-2020/r-package-assessment-samuellyu-2021">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"covid19BFI"</span><span class="op">)</span></pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"etc5523-2020/r-package-assessment-samuellyu-2021"</span><span class="op">)</span></pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="accessing-the-application" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">covid19BFI</span><span class="op">)</span></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+<a href="#accessing-the-application" class="anchor"></a>Accessing the application</h2>
+<div id="the-application-covid19-the-battle-for-independence-can-be-accessed-by-using-launch_app--in-the-console-after-installing-the-package" class="section level3">
+<h3 class="hasAnchor">
+<a href="#the-application-covid19-the-battle-for-independence-can-be-accessed-by-using-launch_app--in-the-console-after-installing-the-package" class="anchor"></a>The application <em>Covid19: The Battle for Independence</em> can be accessed by using <strong>launch_app( )</strong> in the console after installing the package.</h3>
+<p>launch_app( ) will build and generate the interactive shiny application, providing user access immediately.</p>
+</div>
+</div>
+<div id="package-data-and-tools" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package-data-and-tools" class="anchor"></a>Package data and tools</h2>
+<p><em>covid19BFI</em> provides acess to the data used to create the <em>Covid19: The Battle for Independence</em> application as well as tools to explore this, and any, dataset. Calling <strong>covid_data_uk_irl ( )</strong> will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a <strong>dt_styler( )</strong> which is datatable style formatter that can be used with any two variables from any dataset.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">covid19BFI</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidycovid19</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'dplyr'</span>
+<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     filter, lag</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/covdata">covdata</a></span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'covdata'</span>
+<span class="co">#&gt; The following object is masked from 'package:datasets':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     uspop</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/covid_data_uk_irl.html">covid_data_uk_irl</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">covid_data</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span><span class="op">)</span>
+
+<span class="co">#Can use dt_styler to format the data according to key the specified key variables</span>
+<span class="fu"><a href="reference/dt_styler.html">dt_styler</a></span><span class="op">(</span><span class="va">covid_data</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"iso3"</span>, <span class="st">"GBR"</span>, <span class="st">"IRL"</span>, <span class="st">"#b6f3b6"</span>, <span class="st">"#eea7a7"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
+<p><img src="reference/figures/README-example-1.png" width="100%"></p>
+<p>As shown, <strong>dt_styler( )</strong> colors the rows according to the two key variables in the index column.</p>
+</div>
+<div id="learn-more-about-covid19bfi" class="section level2">
+<h2 class="hasAnchor">
+<a href="#learn-more-about-covid19bfi" class="anchor"></a>Learn more about <strong>covid19BFI</strong>
+</h2>
+<ul>
+<li>The vignette provides further indepth explanation of the what the package provides as well as documentation for all the functions, tools and data.</li>
+</ul>
 </div>
 </div>
   </div>
