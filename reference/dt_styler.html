@@ -121,7 +121,7 @@ can be used for any two variables from a dataset and with any two colors from a 
 <p>Learn more in vignette ("covid19BFI")</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dt_styler</span><span class='op'>(</span><span class='va'>data</span>, rownames <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>id</span>, <span class='va'>key1</span>, <span class='va'>key2</span>, <span class='va'>clr1</span>, <span class='va'>clr2</span>, <span class='va'>plength</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>dt_styler</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>id</span>, <span class='va'>key1</span>, <span class='va'>key2</span>, <span class='va'>clr1</span>, <span class='va'>clr2</span>, <span class='va'>plength</span>, rownames <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,10 +129,6 @@ can be used for any two variables from a dataset and with any two colors from a 
     <tr>
       <th>data</th>
       <td><p>A data frame that contains the data to be output in the datatable.</p></td>
-    </tr>
-    <tr>
-      <th>rownames</th>
-      <td><p>Will create the first column as an index with the row numbers for each row when set to <em>TRUE</em>, rownames will not be shown when set to <em>FALSE</em>.</p></td>
     </tr>
     <tr>
       <th>id</th>
@@ -159,11 +155,16 @@ can be used for any two variables from a dataset and with any two colors from a 
       <td><p>The argument the specifies the <strong>number of rows</strong> to be displayed in the table on the first page. Can take up to any number
 between 1 and the maximum length of the dataset.</p></td>
     </tr>
+    <tr>
+      <th>rownames</th>
+      <td><p>Will create the first column as an index with the row numbers for each row when set to <em>TRUE</em>, rownames will not be shown when set to <em>FALSE</em>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>a datatable with colored rows according to the two chosen key variables.</p>
+    <p>The drop down page length selection is fixed at 7, 10, 15 and 20.</p>
+<p>a datatable with colored rows according to the two chosen key variables.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"></pre>

@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Covid19: The Battle For Independence Package • covid19BFI</title>
+<title>covid19BFI Package • covid19BFI</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Covid19: The Battle For Independence Package">
+<script src="../pkgdown.js"></script><meta property="og:title" content="covid19BFI Package">
 <meta property="og:description" content="covid19BFI">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -61,10 +61,14 @@
       
 
       </header><script src="covid19BFI_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="covid19BFI_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="covid19BFI_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+<script src="covid19BFI_files/anchor-sections-1.0/anchor-sections.js"></script><script src="covid19BFI_files/htmlwidgets-1.5.2/htmlwidgets.js"></script><script src="covid19BFI_files/jquery-1.12.4/jquery.min.js"></script><link href="covid19BFI_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="covid19BFI_files/datatables-binding-0.16/datatables.js"></script><link href="covid19BFI_files/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="covid19BFI_files/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="covid19BFI_files/dt-core-1.10.20/js/jquery.dataTables.min.js"></script><link href="covid19BFI_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet">
+<script src="covid19BFI_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Covid19: The Battle For Independence Package</h1>
+      <h1 data-toc-skip>covid19BFI Package</h1>
             
       
       
@@ -75,16 +79,25 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">covid19BFI</span><span class="op">)</span></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">covid19BFI</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'dplyr'</span>
+<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     filter, lag</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     intersect, setdiff, setequal, union</span></pre></div>
 <div id="covid19bfi" class="section level1">
 <h1 class="hasAnchor">
 <a href="#covid19bfi" class="anchor"></a><strong>covid19BFI</strong>
 </h1>
-<p>The R package <em>covid19BFI</em> is a container for the <em>“Covid19: The Battle of Independence”"</em> whoch is an application that has been built as an interactive comparative tool for the analysis over the impact and response to corona virus between Ireland and the United Kingdom. As detailed in the <em>“About”</em> section, there is a long standing and divisive history of conflict and war between the two countries that stems from Ireland’s plight for seeking their complete independence from the United Kingdom. Corona virus has presented pundits who are pro independence with a case study to further ignite and push the fight for independence, with the difference in impact and response between Ireland and the United Kingdom acting as a proxy for Ireland’s ability to stand completely independent, with this package providing access to the application that hands the user the data and the tools to make critically assess the responses between the two countries as well, as access the data and other tools to recreate the analysis.</p>
+<p>The R package <em>covid19BFI</em> is a container for the <em>“Covid19: The Battle of Independence”"</em> which is an application that has been built as an interactive comparative tool for the analysis over the impact and response to corona virus between Ireland and the United Kingdom. As detailed in the <em>“About”</em> section, there is a long standing and divisive history of conflict and war between the two countries that stems from Ireland’s plight for seeking their complete independence from the United Kingdom. Corona virus has presented pundits who are pro independence with a case study to further ignite and push the fight for independence, with the difference in impact and response between Ireland and the United Kingdom acting as a proxy for Ireland’s ability to stand completely independent, with this package providing access to the application that hands the user the data and the tools to make critically assess the responses between the two countries as well, as access the data and other tools to recreate the analysis.</p>
 <div id="launching-the-covid19-the-battle-for-independence-application" class="section level2">
 <h2 class="hasAnchor">
 <a href="#launching-the-covid19-the-battle-for-independence-application" class="anchor"></a>Launching the <em>Covid19: The Battle for Independence</em> application</h2>
-<p>Tha application can be accessed by using the <strong>launch_app( )</strong> function provided by the <em>covid19BFI</em> package. When run, <strong>launch_app</strong> will build and generate the <em>Covid19: The Battle for Independence</em> application.</p>
+<p>The application can be accessed by using the <strong>launch_app( )</strong> function provided by the <em>covid19BFI</em> package. When run, <strong>launch_app</strong> will build and generate the <em>Covid19: The Battle for Independence</em> application.</p>
 </div>
 <div id="what-covid19-the-battle-for-independence-application-provides" class="section level2">
 <h2 class="hasAnchor">
@@ -96,11 +109,11 @@
 <li><em>Movement Analysis</em></li>
 <li><em>References and acknowledgements</em></li>
 </ol>
-<p>The analysis that can be found in the indvidual sections and their interactive features are detailed below:</p>
+<p>The analysis that can be found in the individual sections, and their interactive features, are detailed below:</p>
 <ul>
 <li><p><strong>About</strong>: Contains information regarding purpose and basis behind the application as well as information regarding the creator of the application.</p></li>
 <li>
-<p><strong>Cases Deaths and Government Intervention</strong>: Contains an interactive comparitive analysis on the each of the following statistics:</p>
+<p><strong>Cases Deaths and Government Intervention</strong>: Contains an interactive comparative analysis on the each of the following statistics:</p>
 <ul>
 <li><p>Cumulative Confirmed Cases per capita, 100,000</p></li>
 <li><p>Daily Death Total per capita, 100, 000</p></li>
@@ -118,14 +131,14 @@
 <li>
 <p>With following interactive elements:</p>
 <ol style="list-style-type: decimal">
-<li>Interactive figure that offers hover and click respones, which are detailed on the page</li>
-<li>A drop down menu that allows the user to select the count statistic they whish to compare</li>
-<li>A data range input that lets the user adjust the date range of the comparative counts as well as simultaniously adjusting the date range of the table below showing the government intervention in the form of thenumber of measures and policies that were introduced in each month by both countries.</li>
-<li>Option three is a tick box option which will manipulate the countries shown in the corresponding table, this allows the user to view tboth countries or the individual country of choice.</li>
+<li>Interactive figure that offers hover and click response, which are detailed on the page</li>
+<li>A drop down menu that allows the user to select the count statistic they which to compare</li>
+<li>A data range input that lets the user adjust the date range of the comparative counts as well as simultaneously adjusting the date range of the table below showing the government intervention in the form of the number of measures and policies that were introduced in each month by both countries.</li>
+<li>Option three is a tick box option which will manipulate the countries shown in the corresponding table, this allows the user to view both countries or the individual country of choice.</li>
 </ol>
 </li>
 <li>
-<p>The page displays an interactive figure visualising the selected counts that have been chosen for comparison between the two nations and a table comparing the different number of measures used by each governemnt across the dates they were implemented. Futhermore, an interactive table is presented which provides a grouped monthly percentage breakdown across the number of measures, restrictions and policies enacted by both Ireland and United Kingdom for the following three types of government intervention:</p>
+<p>The page displays an interactive figure visualizing the selected counts that have been chosen for comparison between the two nations and a table comparing the different number of measures used by each government across the dates they were implemented. Furthermore, an interactive table is presented which provides a grouped monthly percentage breakdown across the number of measures, restrictions and policies enacted by both Ireland and United Kingdom for the following three types of government intervention:</p>
 <ol style="list-style-type: decimal">
 <li><em>Number of social distance measures</em></li>
 <li><em>Number of movement restrictions</em></li>
@@ -136,11 +149,11 @@
 </ul>
 </li>
 <li>
-<p><strong>Movement Analysis</strong>: This page provides an analysis on the impact of covid19 has had on the mobility of residents of the major cities in both Ireland and the United Kingdom. The page displays a map of both Ireland and the United Kingdom with the major citites highlights and figure displaying the movement trends of residents in the following three forms of transport:</p>
+<p><strong>Movement Analysis</strong>: This page provides an analysis on the impact of covid19 has had on the mobility of residents of the major cities in both Ireland and the United Kingdom. The page displays a map of both Ireland and the United Kingdom with the major cities highlights and figure displaying the movement trends of residents in the following three forms of transport:</p>
 <ol style="list-style-type: decimal">
 <li>driving</li>
 <li>transit</li>
-<li>walking, as recorded by the apple maps usage fo each of those forms of transportation. This page contains the following interactive elements: 1. The majoy cities displayed on the map for both countries can be clicked in order to update plot below which is a figure displaying the change in driving, walking and transit use during the pandemic.</li>
+<li>walking, as recorded by the apple maps usage of each of those forms of transportation. This page contains the following interactive elements: 1. The major cities displayed on the map for both countries can be clicked in order to update plot below which is a figure displaying the change in driving, walking and transit use during the pandemic.</li>
 </ol>
 <ul>
 <li>The side bar contains two options:
@@ -154,10 +167,88 @@
 </li>
 </ul>
 </div>
-<div id="features-of-the-covid19bfi-package" class="section level2">
+<div id="feature-of-covid19bfi-package" class="section level2">
 <h2 class="hasAnchor">
-<a href="#features-of-the-covid19bfi-package" class="anchor"></a>Features of the <em>covid19BFI</em> package</h2>
-<p>Along with the access the application</p>
+<a href="#feature-of-covid19bfi-package" class="anchor"></a>Feature of <em>covid19BFI</em> package</h2>
+<div id="available-datasets" class="section level3">
+<h3 class="hasAnchor">
+<a href="#available-datasets" class="anchor"></a>Available datasets</h3>
+<p><strong>covid19BFI</strong> package provides three datasets that were used in producing the analysis in the <em>Covid19: The Battle for Independence</em> application and can be directly accessed by printing their names once <strong>covid19BFI</strong> is installed and loaded. The datasets are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>
+<code>covid_data_uk_irl</code>: Which is the final dataset that was used to perform the analysis, consisting of the variables listed under the <strong>Cases Deaths and Government Intervention</strong> section.</li>
+<li>
+<code>raw_covid_data_uk_url</code>: The raw dataset which is a combination of data sourced from from <a href="https://github.com/joachim-gassen/tidycovid19">tidycovid19</a> package and the <a href="https://github.com/kjhealy/covdata">covdata</a>.</li>
+<li>
+<code>mobility_major_cities</code>: The data set used to conduct the mobility analysis comparison between IRL and UK. This contains the change in mobility across walking, driving and transit for all the major cities of Ireland the United Kingdom.</li>
+</ol>
+<p>Suppose we wanted to see the covid data between two specific dates we could use the filter function and filter the dates from a specific date, could access the datasets as follows.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="va">covid_data_uk_irl</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 10 x 17</span>
+<span class="co">#&gt; # Groups:   iso3 [2]</span>
+<span class="co">#&gt;    date       iso3  `Cumulative Con… `Cumulative Con… `Daily Death To…</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2020-10-19 GBR             722409            1084.          0.0101 </span>
+<span class="co">#&gt;  2 2020-10-19 IRL              49962            1019.          0.00612</span>
+<span class="co">#&gt;  3 2020-10-18 GBR             705428            1058.          0.0225 </span>
+<span class="co">#&gt;  4 2020-10-18 IRL              48678             993.          0.0163 </span>
+<span class="co">#&gt;  5 2020-10-17 GBR             689257            1034.          0.0204 </span>
+<span class="co">#&gt;  6 2020-10-17 IRL              47427             967.          0.00612</span>
+<span class="co">#&gt;  7 2020-10-16 GBR             673622            1011.          0.0207 </span>
+<span class="co">#&gt;  8 2020-10-16 IRL              46429             947.          0.00612</span>
+<span class="co">#&gt;  9 2020-10-15 GBR             654644             982.          0.0206 </span>
+<span class="co">#&gt; 10 2020-10-15 IRL              45243             923.          0.0102 </span>
+<span class="co">#&gt; # … with 12 more variables: `Cumulative Death per capita, 100,000` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `Daily Confirmed Cases` &lt;dbl&gt;, `Cumulative Deaths` &lt;dbl&gt;, `Daily Confirmed</span>
+<span class="co">#&gt; #   Deaths` &lt;dbl&gt;, `Daily Confirmed Cases per capita, 100,000` &lt;dbl&gt;, `Log of</span>
+<span class="co">#&gt; #   Cumulative Confirmed Cases` &lt;dbl&gt;, `Log of Daily Confirmed Cases` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `Log of Cumulative Deaths` &lt;dbl&gt;, `Social distancing measures` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `Movement Restrictions` &lt;dbl&gt;, `Public Health Measures` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   details &lt;glue&gt;</span></pre></div>
+</div>
+<div id="datatable-styling" class="section level3">
+<h3 class="hasAnchor">
+<a href="#datatable-styling" class="anchor"></a>Datatable styling</h3>
+<p>A datatable styling function called <strong>dt_styler</strong> is provided by <strong>covid19BFI</strong> package that allows the user to color the rows of a datatable according to two key variables that are found in the index column of the chosen dataset. <strong>dt_styler</strong> takes the following 8 arguments:</p>
+<ol style="list-style-type: decimal">
+<li>
+<code>data</code>: A data frame that contains the data to be output in the datatable.</li>
+<li>
+<code>id</code>: The column name that contains the <em>key</em> variables and will be used as an index for the function to identify.</li>
+<li>
+<code>key1</code>: A single argument that is the <strong>first key</strong> variable that is chosen to have each of its rows highlighted by being colored in the chosen color.</li>
+<li>
+<code>key2</code>: A single argument that is the <strong>second key</strong> variable that is chosen to have each of its rows highlighted by being colored in the other chosen color.</li>
+<li>
+<code>clr1</code>: The <strong>first color</strong> that will highlight all the rows that are associated with <em>key1</em>.</li>
+<li>
+<code>clr2</code>: The **second color* that will highlight all the rows that are associated with <em>key1</em>.</li>
+<li>
+<code>plength</code>: The argument the specifies the <strong>number of rows</strong> to be displayed in the table on the first page. Can take up to any number between 1 and the maximum length of the dataset.</li>
+<li>
+<code>rownames</code>: Will create the first column as an index with the row numbers for each row when set to <em>TRUE</em>, rownames will not be shown when set to <em>FALSE</em>.</li>
+</ol>
+<p>As stated any two variables can have their rows uniquely colored in any two chosen colors with the two key variables requiring to exist in the index column, within an interactive datatable. The datatable drop down page length is fixed at 7, 10, 15, 20 however the first page can be overwritten by using stating the desired page length using the <code>plength</code> argument. In the event we wished to highlight the rows in table to make sure it was clear what data belonged to which variable, the <strong>dt_styler</strong> function could be used, for example if you wanted to highlight the sepal length of two different bird we could do as follows.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span><span class="op">)</span>,
+         <span class="va">Sepal.Length</span> <span class="op">&gt;=</span> <span class="fl">4.8</span> <span class="op">&amp;</span> <span class="va">Sepal.Length</span> <span class="op">&lt;=</span> <span class="fl">5.0</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Sepal.Length</span><span class="op">)</span>
+<span class="co">#Builds a datatable of length 10, with the rows for setosa being colored blueand the rows for versicolor colored red.</span>
+<span class="fu"><a href="../reference/dt_styler.html">dt_styler</a></span><span class="op">(</span><span class="va">dt</span>, <span class="st">"Species"</span>, <span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"#baf4f0"</span>, <span class="st">"#f4e3ba"</span>, <span class="fl">10</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> </pre></div>
+<div id="htmlwidget-d23c81b1c89de686e600" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d23c81b1c89de686e600">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],[4.8,4.8,4.8,4.8,4.8,4.9,4.9,4.9,4.9,4.9,5,5,5,5,5,5,5,5,5,5],[3.4,3,3.4,3.1,3,3,3.1,3.1,3.6,2.4,3.6,3.4,3,3.4,3.2,3.5,3.5,3.3,2,2.3],[1.6,1.4,1.9,1.6,1.4,1.4,1.5,1.5,1.4,3.3,1.4,1.5,1.6,1.6,1.2,1.3,1.6,1.4,3.5,3.3],[0.2,0.1,0.2,0.2,0.3,0.2,0.1,0.2,0.1,1,0.2,0.2,0.2,0.4,0.2,0.3,0.6,0.2,1,1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[7,10,15,20],"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[5]; $(row).css({'background-color':value == \"setosa\" ? \"#baf4f0\" : value == \"versicolor\" ? \"#f4e3ba\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="more-details" class="section level2">
+<h2 class="hasAnchor">
+<a href="#more-details" class="anchor"></a>More details</h2>
+<ul>
+<li>For the rest of the features and documentation of the <strong>covid19BFI</strong> package please see the reference section.</li>
+</ul>
 </div>
 </div>
   </div>
