@@ -88,7 +88,7 @@
 <div id="package-data-and-tools" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-data-and-tools" class="anchor"></a>Package data and tools</h2>
-<p><em>covid19BFI</em> provides acess to the data used to create the <em>Covid19: The Battle for Independence</em> application as well as tools to explore this, and any, dataset. Calling <strong>covid_data_uk_irl ( )</strong> will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a <strong>dt_styler( )</strong> which is datatable style formatter that can be used with any two variables from any dataset.</p>
+<p><em>covid19BFI</em> provides acess to the data used to create the <em>Covid19: The Battle for Independence</em> application as well as tools to explore this, and any, dataset. Calling <strong>covid_data_uk_irl</strong> will provide the covid cases and deaths data that has been compiled for Ireland and the United Kingdom. In order to further explore this dataset, simply assign it to an object and then conduct the desired analysis. Tools that the package provides include a <strong>dt_styler( )</strong> which is datatable style formatter that can be used with any two variables from any dataset.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">covid19BFI</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidycovid19</span><span class="op">)</span>
@@ -109,13 +109,12 @@
 <span class="co">#&gt;     uspop</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/covid_data_uk_irl.html">covid_data_uk_irl</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">covid_data</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">%&gt;%</span> 
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">covid_data_uk_irl</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span><span class="op">)</span>
 
 <span class="co">#Can use dt_styler to format the data according to key the specified key variables</span>
-<span class="fu"><a href="reference/dt_styler.html">dt_styler</a></span><span class="op">(</span><span class="va">covid_data</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"iso3"</span>, <span class="st">"GBR"</span>, <span class="st">"IRL"</span>, <span class="st">"#b6f3b6"</span>, <span class="st">"#eea7a7"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="reference/dt_styler.html">dt_styler</a></span><span class="op">(</span><span class="va">data</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"iso3"</span>, <span class="st">"GBR"</span>, <span class="st">"IRL"</span>, <span class="st">"#b6f3b6"</span>, <span class="st">"#eea7a7"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 <p>As shown, <strong>dt_styler( )</strong> colors the rows according to the two key variables in the index column.</p>
 </div>
