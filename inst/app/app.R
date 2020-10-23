@@ -220,7 +220,7 @@ server <- function(input, output, session) {
             ungroup()
         soc_dist_tab <- data_wrangle(soc_dist)
         
-        dt_styler(soc_dist_tab, rownames = FALSE, "Country", "IRL", "GBR", "#dcfbdc", "#fedddd", plength = 7)
+        dt_styler(soc_dist_tab, "Country", "IRL", "GBR", "#dcfbdc", "#fedddd", plength = 7, rownames = FALSE)
         
     })
     

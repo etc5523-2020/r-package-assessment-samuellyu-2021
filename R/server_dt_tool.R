@@ -6,7 +6,8 @@ globalVariables("DT")
 #' can be used for any two variables from a dataset and with any two colors from a dataset.   
 #' 
 #' Learn more in vignette ("covid19BFI")
-#'  
+#'
+#'@details The drop down page length selection is fixed at 7, 10, 15 and 20.  
 #' 
 #' @param data A data frame that contains the data to be output in the datatable.
 #' @param rownames Will create the first column as an index with the row numbers for each row when set to _TRUE_, rownames will not be shown when set to _FALSE_. 
@@ -26,7 +27,7 @@ globalVariables("DT")
 #' 
 #' #Builds a datatable of length 10, with the rows for setosa being 
 #' colored blueand the rows for versicolor colored red.
-#' dt_styler(dt, rownames = FALSE, "Species", "setosa", "versicolor", "blue", "red", 10) 
+#' dt_styler(dt, "Species", "setosa", "versicolor", "blue", "red", 10, rownames = FALSE) 
 #'}
 #' 
 #' @export
@@ -34,7 +35,7 @@ globalVariables("DT")
 #' @importFrom DT datatable
 #' @importFrom DT formatStyle 
 #' @importFrom DT styleEqual
-dt_styler <- function (data, rownames = FALSE, id, key1, key2, clr1, clr2, plength) {
+dt_styler <- function (data, id, key1, key2, clr1, clr2, plength, rownames = FALSE) {
   
   stopifnot(
   color_check(c(clr1, clr2)) == TRUE)
@@ -43,7 +44,7 @@ dt_styler <- function (data, rownames = FALSE, id, key1, key2, clr1, clr2, pleng
     plength > 0
   )
   
-  datatable(data, rownames, options = list(lengthMenu = c(7, 10, 15, 20), pageLength = plength)) %>% 
+  datatable(data, options = list(lengthMenu = c(7, 10, 15, 20), pageLength = plength, rownames)) %>% 
     formatStyle(id, 
                 target = 'row',
                 backgroundColor = styleEqual(c(key1,key2), c(clr1, clr2)))

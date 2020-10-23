@@ -4,12 +4,10 @@
 \alias{dt_styler}
 \title{Generate Datatable with Formatted Styling}
 \usage{
-dt_styler(data, rownames = FALSE, id, key1, key2, clr1, clr2, plength)
+dt_styler(data, id, key1, key2, clr1, clr2, plength, rownames = FALSE)
 }
 \arguments{
 \item{data}{A data frame that contains the data to be output in the datatable.}
-
-\item{rownames}{Will create the first column as an index with the row numbers for each row when set to \emph{TRUE}, rownames will not be shown when set to \emph{FALSE}.}
 
 \item{id}{The column name that contains the \emph{key} variables and will be used as an index for the function to identify.}
 
@@ -23,6 +21,8 @@ dt_styler(data, rownames = FALSE, id, key1, key2, clr1, clr2, plength)
 
 \item{plength}{The argument the specifies the \strong{number of rows} to be displayed in the table on the first page. Can take up to any number
 between 1 and the maximum length of the dataset.}
+
+\item{rownames}{Will create the first column as an index with the row numbers for each row when set to \emph{TRUE}, rownames will not be shown when set to \emph{FALSE}.}
 }
 \description{
 dt_styler( ) generates a datatable with style formatting that will "color" the rows that belong to the
@@ -32,6 +32,8 @@ can be used for any two variables from a dataset and with any two colors from a 
 Learn more in vignette ("covid19BFI")
 }
 \details{
+The drop down page length selection is fixed at 7, 10, 15 and 20.
+
 a datatable with colored rows according to the two chosen key variables.
 }
 \examples{
@@ -40,7 +42,7 @@ dt <- iris \%>\% filter(Species \%in\% c("setosa", "versicolor"))
 
 #Builds a datatable of length 10, with the rows for setosa being 
 colored blueand the rows for versicolor colored red.
-dt_styler(dt, rownames = FALSE, "Species", "setosa", "versicolor", "blue", "red", 10) 
+dt_styler(dt, "Species", "setosa", "versicolor", "blue", "red", 10, rownames = FALSE) 
 }
 
 }

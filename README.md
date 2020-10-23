@@ -75,7 +75,7 @@ data <- covid_data_uk_irl %>%
   head(n=10)
 
 #Can use dt_styler to format the data according to key the specified key variables
-dt_styler(data, rownames = FALSE, "iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", 4)
+dt_styler(data,"iso3", "GBR", "IRL", "#b6f3b6", "#eea7a7", plength = 4, rownames = FALSE)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
