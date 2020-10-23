@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Covid Data for Ireland and the United Kingdom — covid_data_uk_irl" />
-<meta property="og:description" content="covid_data_uk_irl( ) returns a dataset that contains covid19 related data for Ireland and the United Kingdom" />
+<meta property="og:description" content="covid_data_uk_irl returns a dataset that contains the wrangled covid19 related data for Ireland and the United Kingdom with the variables listed below." />
 
 
 
@@ -112,25 +112,25 @@
     </div>
 
     <div class="ref-description">
-    <p><code>covid_data_uk_irl( )</code> returns a dataset that contains covid19 related data for Ireland and the United Kingdom</p>
+    <p><code>covid_data_uk_irl</code> returns a dataset that contains the wrangled covid19 related data for Ireland and the United Kingdom with the variables listed below.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>covid_data_uk_irl</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>covid_data_uk_irl</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p><code>covid_data_uk_irl( )</code> returns a dataset that contains covid19 related data for Ireland and the United Kingdom. A tibble with 494 rows and 18 columns, that consist of the following variables</p>
+    <p><code>covid_data_uk_irl</code> returns a dataset that contains covid19 related data for Ireland and the United Kingdom, updated as of the 21st of October 2020.</p>
 <ul>
 <li><p><code>date</code> date in YYYY-MM-DD format</p></li>
 <li><p><code>iso3</code> ISO3 country code (character)</p></li>
-<li><p><code>Cumulative Confirmed Cases</code>Cumulative N reported COVID-19 cases up to and including this date</p></li>
-<li><p><code>Cumulative Confirmed Cases per capita, 100,000</code> Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000</p></li>
-<li><p><code>Daily Death Total per capita, 100,000</code> N reported COVID-19 deaths on this date, per capita 100,000</p></li>
-<li><p><code>Cumulative Death per capita, 100,000</code> Cumulative N reported COVID-19 deaths up to and including this date</p></li>
-<li><p><code>Daily Confirmed Cases</code> Cumulative N reported COVID-19 cases up to and including this date</p></li>
-<li><p><code>Cumulative Deaths</code>Cumulative N reported COVID-19 deaths up to and including this date</p></li>
-<li><p><code>Daily Confirmed Deaths</code> N reported COVID-19 deaths on this date</p></li>
+<li><p><code>Cumulative Confirmed Cases</code>Cumulative N reported COVID-19 cases up to and including this updated as of the 21st of October 2020.</p></li>
+<li><p><code>Cumulative Confirmed Cases per capita, 100,000</code> Cumulative N reported COVID-19 cases up to and including this date, per capita 100,000 updated as of the 21st of October 2020.</p></li>
+<li><p><code>Daily Death Total per capita, 100,000</code> N reported COVID-19 deaths updated as of the 21st of October 2020., per capita 100,000</p></li>
+<li><p><code>Cumulative Death per capita, 100,000</code> Cumulative N reported COVID-19 deaths updated as of the 21st of October 2020.</p></li>
+<li><p><code>Daily Confirmed Cases</code> Number of daily reported COVID-19 cases on the chosen date up to the 21st of October 2020.</p></li>
+<li><p><code>Cumulative Deaths</code>Cumulative N reported COVID-19 deaths up to the 21st of October 2020.</p></li>
+<li><p><code>Daily Confirmed Deaths</code> Number reported COVID-19 daily deaths on the chosen date up to the 21st of October 2020.</p></li>
 <li><p><code>Daily Confirmed Cases per capita, 100,000</code>N reported COVID-19 cases on this date, per capita 100,000</p></li>
 <li><p><code>Log of Cumulative Confirmed Cases</code> Log base 10 of cumulative N reported COVID-19 cases up to and including this date</p></li>
 <li><p><code>Log of Daily Confirmed Cases</code> Log base 10 of N reported COVID-19 cases on this date</p></li>
@@ -150,9 +150,9 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># Create an object with the package and then call and work with any variable in the dataset</span>
-<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>covid_data_uk_irl</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>data</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`Log of Daily Confirmed Cases`</span>, <span class='va'>`Movement Restrictions`</span>, <span class='va'>`Public Health Measures`</span><span class='op'>)</span>
+<span class='co'># Directly call variables from the `covid_data_uk_irl` dataset</span>
+ <span class='va'>covid_data_uk_irl</span> <span class='op'>%&gt;%</span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`Log of Daily Confirmed Cases`</span>, <span class='va'>`Movement Restrictions`</span>, <span class='va'>`Public Health Measures`</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 </div></pre>
