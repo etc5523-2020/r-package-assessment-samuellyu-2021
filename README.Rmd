@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
+[![R build status](https://github.com/etc5523-2020/r-package-assessment-samuellyu-2021/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-samuellyu-2021/actions)
 <!-- badges: end -->
 
 The R package _covid19BFI_ is a container for the _Covid19: The Battle for Independence_ application that provides access to an interactive and insightful application for compartive analysis between Ireland and the United Kingdom over the impact of coronavirus and the response to deal with pandemic from each government. Coronavirus has further reignited the discussion for Irish independence, given Ireland is split into two states - The republic of Ireland and Northern Ireland, there is now a direct case study with coronavirus response as the proxy for Ireland's ability to stand completely united and independent of the UK, with this package providing access to the application that hands
